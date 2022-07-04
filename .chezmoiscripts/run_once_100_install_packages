@@ -7,4 +7,5 @@ sudo xbps-install -y \
 	xorg \
 	bspwm \
 	sxhkd \
-	kitty
+	kitty \
+	firefox
