@@ -3,4 +3,8 @@
 # Install required void linux packages
 sudo xbps-install -y \
 	git \
-	neovim
+	neovim \
+	xorg \
+	bspwm \
+	sxhkd \
+	kitty
