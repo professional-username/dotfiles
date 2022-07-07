@@ -9,4 +9,6 @@ sudo xbps-install -y \
 	sxhkd \
 	kitty \
 	firefox \
-	rofi
+	rofi \
+	font-firacode \
+	font-awesome
