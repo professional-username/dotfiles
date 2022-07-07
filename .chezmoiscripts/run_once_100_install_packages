@@ -8,4 +8,5 @@ sudo xbps-install -y \
 	bspwm \
 	sxhkd \
 	kitty \
-	firefox
+	firefox \
+	rofi
