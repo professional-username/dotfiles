@@ -11,4 +11,5 @@ sudo xbps-install -y \
 	firefox \
 	rofi \
 	font-firacode \
-	font-awesome
+	font-awesome \
+	picom
