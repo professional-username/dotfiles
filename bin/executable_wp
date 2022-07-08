@@ -1,0 +1,4 @@
+#!/bin/fish
+
+# Set a random wallpaper
+feh --bg-fill --random ~/Pictures/Wallpapers/
