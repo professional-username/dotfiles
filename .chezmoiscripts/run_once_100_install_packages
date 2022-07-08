@@ -11,11 +11,14 @@ sudo xbps-install -y \
 	firefox \
 	rofi \
 	font-firacode \
-	font-awesome \
+	nerd-fonts \
 	picom \
 	feh \
 	curl \
-	fish-shell
+	fish-shell \
+	Thunar \
+    gtk-engine-murrine \
+    gnome-themes-extra
 
 # Install some packages outside of xbps
 # vim-plug
