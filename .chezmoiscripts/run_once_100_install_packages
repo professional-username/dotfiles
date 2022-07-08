@@ -13,4 +13,6 @@ sudo xbps-install -y \
 	font-firacode \
 	font-awesome \
 	picom \
-	feh
+	feh \
+	curl \
+	fish-shell
