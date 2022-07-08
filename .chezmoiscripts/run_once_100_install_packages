@@ -12,4 +12,5 @@ sudo xbps-install -y \
 	rofi \
 	font-firacode \
 	font-awesome \
-	picom
+	picom \
+	feh
