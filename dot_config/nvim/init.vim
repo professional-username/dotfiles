@@ -7,6 +7,7 @@ Plug 'ervandew/supertab' 						" Simple autocomplete
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}	" Catppuccin colorscheme
 call plug#end()
 
+let g:catppuccin_flavour = "mocha"
 colorscheme catppuccin
 
 set tabstop=4
