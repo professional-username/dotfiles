@@ -1,0 +1,18 @@
+#!/bin/bash
+
+{{ if eq .chezmoi.osRelease.id "arch" }} # TODO: Or Artix
+
+# Check yay isn't already installed
+if pacman -Q yay >&/dev/null; then exit; fi
+
+# Installation
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -sic --noconfirm
+
+# Cleanup
+cd ../
+rm -rf yay
+
+{{ end }}
+

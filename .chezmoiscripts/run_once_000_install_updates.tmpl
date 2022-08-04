@@ -1,0 +1,13 @@
+#!/bin/bash
+
+{{ if eq .chezmoi.osRelease.id "void" }}
+
+# Update a void system
+sudo xbps-install -Syu
+
+{{ else if eq .chezmoi.osRelease.id "arch" }} # TODO: Or Artix
+
+# Update an arch system
+sudo pacman -Syyu --noconfirm
+
+{{ end }}
