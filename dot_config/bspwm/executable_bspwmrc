@@ -13,8 +13,8 @@ bspc config normal_border_color "#575268"
 bspc config presel_border_color "#575268"
 
 bspc config split_ratio          0.5
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config borderless_monocle   false
+bspc config gapless_monocle      false
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
