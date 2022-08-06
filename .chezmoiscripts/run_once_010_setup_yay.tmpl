@@ -1,6 +1,10 @@
 #!/bin/bash
 
+
 {{ if eq .chezmoi.osRelease.id "arch" }} # TODO: Or Artix
+
+# Required to build packages from aur
+sudo pacman -S --noconfirm --needed base-devel
 
 # Check yay isn't already installed
 if pacman -Q yay >&/dev/null; then exit; fi
