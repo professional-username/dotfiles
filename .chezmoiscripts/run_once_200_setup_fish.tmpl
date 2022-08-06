@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Run whenever applying in a new OS, if $SHELL is not fish
+# {{ .chezmoi.osRelease.id }}
+if [ `echo $SHELL` != "/bin/fish" ]; then
+
+	# Set fish as default shell
+	sudo chsh -s /bin/fish $USER
+	export SHELL=/bin/fish
+
+	# Install fisher
+	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+	fisher update
+
+fi
