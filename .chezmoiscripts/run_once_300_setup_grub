@@ -1,0 +1,15 @@
+#!/bin/fish
+
+# Catppuccin theme installation
+git clone https://github.com/catppuccin/grub.git
+cd grub
+sudo cp -r src/catppuccin-mocha-grub-theme /usr/share/grub/themes/
+cd ../
+rm -rf grub
+
+# Set grub settings
+echo 'GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"' | sudo tee -a /etc/default/grub
+echo 'GRUB_DISABLE_OS_PROBER=false' | sudo tee -a /etc/default/grub
+
+# Run grub configurator
+sudo grub-mkconfig -o /boot/grub/grub.cfg
