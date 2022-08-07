@@ -1,59 +1,71 @@
 #!/bin/bash
+# vim:filetype=bash:foldmethod=marker
 
 {{ if eq .chezmoi.osRelease.id "void" }}
-# Install Void packages
 
-# Desktop Environment packages
-sudo xbps-install -y \
-	xorg \
-	picom \
-	bspwm \
-	sxhkd \
-	rofi \
-	kitty \
-	fish-shell \
-	feh
+# ━━━━━━━━━━━━━━━━━━━━━━━━━ VOID PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━
 
-# Useful programs
+# Desktop Environment packages {{{
 sudo xbps-install -y \
-	curl \
-	git \
-	neovim \
-	firefox \
-	Thunar
+    xorg \
+    picom \
+    bspwm \
+    sxhkd \
+    rofi \
+    kitty \
+    fish-shell \
+    feh
+# }}}
+
+# Useful programs {{{
+sudo xbps-install -y \
+    curl \
+    git \
+    neovim \
+    firefox \
+    Thunar
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# }}}
 
-# Fonts and themes
+# Fonts and themes {{{
 sudo xbps-install -y \
-	nerd-fonts \
+    nerd-fonts \
     gtk-engine-murrine \
     gnome-themes-extra
+# }}}
+
 
 {{ else if eq .chezmoi.osRelease.id "arch" }} # TODO: Or Artix
 
-# Desktop Environment packages
-yay -S --noconfirm --needed \
-	xorg \
-	xorg-xinit \
-	picom \
-	bspwm \
-	sxhkd \
-	rofi \
-	kitty \
-	fish \
-	feh
+# ━━━━━━━━━━━━━━━━━━━━━━━━━ ARCH PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━
 
-# Useful programs
+# Desktop Environment packages {{{
 yay -S --noconfirm --needed \
-	curl \
-	git \
-	neovim \
-	firefox \
-	thunar \
-	neovim-plug
+    xorg \
+    xorg-xinit \
+    picom \
+    bspwm \
+    sxhkd \
+    rofi \
+    kitty \
+    fish \
+    feh
+# }}}
 
-# Fonts and themes
+# Useful programs {{{
 yay -S --noconfirm --needed \
-	nerd-fonts-fira-code \
+    curl \
+    git \
+    neovim \
+    firefox \
+    thunar \
+    neovim-plug
+# }}}
+
+# Fonts and themes {{{
+yay -S --noconfirm --needed \
+    nerd-fonts-fira-code
+# }}}
+
 
 {{ end }}
