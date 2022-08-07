@@ -11,6 +11,7 @@ Plug 'preservim/nerdtree'						" File explorer
 Plug 'ervandew/supertab' 						" Simple autocomplete
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}	" Catppuccin colorscheme
 Plug 'khaveesh/vim-fish-syntax' 				" Fish syntax etc.
+Plug 'elkowar/yuck.vim' 						" Yuck syntax
 call plug#end()
 
 " ━━━━━━━━━━━━━━━━━━━━ EYE CANDY ━━━━━━━━━━━━━━━━━━━━
