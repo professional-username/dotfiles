@@ -1,0 +1,26 @@
+[global]
+	frame_color = "#B4BEFE"
+	separator_color= frame
+
+	font = FiraCode Nerd Font Mono 11
+	line_height = 5
+
+	padding = 13
+	horizontal_padding = 13
+
+	corner_radius = 15
+
+[urgency_low]
+	background = "#1E1E2E"
+	foreground = "#CDD6F4"
+
+[urgency_normal]
+	background = "#1E1E2E"
+	foreground = "#CDD6F4"
+
+[urgency_critical]
+	background = "#1E1E2E"
+	foreground = "#CDD6F4"
+	frame_color = "#FAB387"
+
+# vim: ft=cfg
