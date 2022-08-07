@@ -1,0 +1,4 @@
+#!/bin/fish
+
+# Install plugins
+nvim +'PlugInstall --sync' +qa
