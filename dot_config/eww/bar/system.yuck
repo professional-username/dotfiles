@@ -1,0 +1,48 @@
+; Folds out to display several system trackers when hoeverd over
+(defwidget system-tray []
+  (eventbox :class "system_tray"
+    :onhover "eww update system-tray-visible=true"
+    :onhoverlost "eww update system-tray-visible=false"
+    (box
+      :space-evenly false
+      :spacing 10
+      :orientation "v"
+      (revealer :class "tray"
+        :transition "slideup"
+        :reveal system-tray-visible
+        (box
+          :orientation "v"
+          :spacing 10
+          (circular-tracker 
+            :tracked-value {100 * EWW_RAM["used_mem"] / EWW_RAM["total_mem"]}
+            :tooltip-label "RAM")
+          (circular-tracker 
+            :tracked-value {EWW_CPU.avg}
+            :tooltip-label "CPU")
+        )
+      )
+      (label :class "label"
+        :text "+")
+    )
+  )
+)
+
+; Like a speedometer - a percentage surrounded by a circular bar==
+(defwidget circular-tracker [tracked-value tooltip-label]
+  (overlay :class "circular_tracker"
+    :tooltip tooltip-label
+    :valign "center"
+    :halign "center"
+    (circular-progress :class "progress"
+      :width 51
+      :height 51
+      :value tracked-value
+      :thickness 6
+      :start-at 25)
+    (label :class "label"
+      :text "${round(tracked-value, 0)}%")
+  )
+)
+
+; Variable definitions
+(defvar system-tray-visible false)

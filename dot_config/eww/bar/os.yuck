@@ -1,0 +1,6 @@
+; Shows an icon corresponding to the current os
+(defwidget os-icon []
+  (label :class "os_icon"
+    :text "" ; TODO: This should be some kind of script
+  )
+)

@@ -1,0 +1,45 @@
+; Filepaths have to be relating to eww config dir ¯\_('-')_/¯
+(include "./bar/system.yuck")
+(include "./bar/time.yuck")
+(include "./bar/power.yuck")
+(include "./bar/os.yuck")
+(include "./bar/workspaces.yuck")
+
+(defwindow bar
+  :monitor 0
+  :geometry (geometry :x "0%"
+              :y "0%"
+              :width "60px"
+              :height "100%"
+              :anchor "left center")
+  :stacking "fg"
+  :reserve (struts :distance "60px" :side "left")
+  :windowtype "dock"
+  :wm-ignore false
+  (box
+    :orientation "v"
+    (top)
+    (bottom)
+  )
+)
+
+(defwidget top []
+    (box
+      :valign "start"
+      :orientation "v"
+      :space-evenly false
+      (os-icon)
+      (workspaces)
+    )
+  )
+
+(defwidget bottom []
+    (box
+      :valign "end"
+      :orientation "v"
+      :space-evenly false
+      (system-tray)
+      (time)
+      (powermenu)
+    )
+  )
