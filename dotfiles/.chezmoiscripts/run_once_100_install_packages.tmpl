@@ -24,7 +24,8 @@ sudo xbps-install -y \
     git \
     neovim \
     firefox \
-    Thunar
+    Thunar \
+	zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 # >>>
 
@@ -64,9 +65,10 @@ yay -S --noconfirm --needed \
     curl \
     git \
     neovim \
+    neovim-plug \
     firefox \
     thunar \
-    neovim-plug
+	zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
 # >>>
 
 # Fonts and themes <<<
