@@ -35,6 +35,11 @@ sudo xbps-install -y \
     gnome-themes-extra
 # >>>
 
+# Eye candy <<<
+sudo xbps-install -y \
+	neofetch
+#>>>
+
 
 {{ else if eq .chezmoi.osRelease.id "arch" }} # TODO: Or Artix
 
@@ -69,5 +74,9 @@ yay -S --noconfirm --needed \
     nerd-fonts-fira-code
 # >>>
 
+# Eye candy <<<
+yay -S --noconfirm --needed \
+	neofetch
+#>>>
 
 {{ end }}
