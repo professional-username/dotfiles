@@ -1,11 +1,7 @@
 #!/bin/fish
 
 # Catppuccin theme installation
-git clone https://github.com/catppuccin/grub.git
-cd grub
-sudo cp -r src/catppuccin-mocha-grub-theme /usr/share/grub/themes/
-cd ../
-rm -rf grub
+sudo cp -r $HOME/.config/grub/catppuccin-mocha-grub-theme /usr/share/grub/themes/
 
 # Set grub settings
 echo 'GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"' | sudo tee -a /etc/default/grub
