@@ -7,6 +7,9 @@ set -gx XDG_CONFIG_HOME $HOME/.config/
 # Set $PATH
 fish_add_path -p $HOME/bin $HOME/.cargo/bin
 
+# Enable zoxide
+zoxide init fish | source
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
