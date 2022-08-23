@@ -1,20 +1,16 @@
 #!/bin/fish
 # vim:filetype=fish:foldmethod=marker:fmr=<<<,>>>
 
-# Permission addition <<<
+# Spicetify setup <<<
 {{ if eq .chezmoi.osRelease.id "void" }}
-
-sudo chmod a+wr /usr/libexec/spotify/
-sudo chmod a+wr /usr/libexec/spotify/Apps/ -R
-
-{{ else if eq .chezmoi.osRelease.id "arch" }} # TODO: Or Artix
+sudo ln -s /usr/libexec/spotify /opt/spotify
+{{ end }}
 
 sudo chmod a+wr /opt/spotify/
 sudo chmod a+wr /opt/spotify/Apps/ -R
-
-{{ end }}
 # >>>
 
+# Catppuccin theme setup
 spicetify config current_theme catppuccin-mocha
 spicetify config color_scheme lavender
 spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
