@@ -22,7 +22,11 @@ sudo xbps-install -y \
 sudo xbps-install -y \
     firefox \
     Thunar \
-	zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps \
+	zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
+$HOME/void-packages/xbps-src pkg \
+	spotify
+sudo xbps-install -y --repository=$HOME/void-packages/hostdir/binpkgs/nonfree \
+	spotify
 # >>>
 
 # Useful CLI programs <<<
@@ -40,6 +44,7 @@ sudo xbps-install -y \
 	bat
 #TODO: Add organize-rt, webtorrent? 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
 # >>>
 
 # Fonts and themes <<<
@@ -78,6 +83,7 @@ yay -S --noconfirm --needed \
     firefox \
     thunar \
 	zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps \
+	spotify
 # >>>
 
 # Useful CLI programs <<<
@@ -93,7 +99,8 @@ yay -S --noconfirm --needed \
 	entr \
 	zoxide \
 	fzf \
-	bat
+	bat \
+	spicetify-cli
 # >>>
 
 # Fonts and themes <<<
