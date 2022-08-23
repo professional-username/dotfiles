@@ -20,6 +20,9 @@ alias cat="bat"
 # Set $PATH
 fish_add_path -p $HOME/bin $HOME/.cargo/bin
 
+# Enable pyenv
+pyenv init - | source
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end

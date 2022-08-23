@@ -18,6 +18,18 @@ sudo xbps-install -y \
 	dunst
 # >>>
 
+# Programming Languages <<<
+sudo xbps-install -y \
+	base-devel \
+	bzip2-devel \
+	openssl openssl-devel \
+	readline readline-devel \
+	sqlite-devel \
+	xz \
+	zlib zlib-devel
+curl https://pyenv.run | bash
+# >>>
+
 # Useful programs <<<
 sudo xbps-install -y \
     firefox \
@@ -76,6 +88,12 @@ yay -S --noconfirm --needed \
     fish \
     feh \
 	dunst
+# >>>
+
+# Programming Languages <<<
+yay -S --noconfirm --needed \
+	ncurses5-compat-libs \
+	pyenv
 # >>>
 
 # Useful GUI programs <<<
