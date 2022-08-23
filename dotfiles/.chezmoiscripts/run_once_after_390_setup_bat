@@ -1,0 +1,3 @@
+#!/bin/fish
+# Rebuild bat's cache to load themes properly
+bat cache --build
