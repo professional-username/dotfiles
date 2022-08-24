@@ -1,4 +1,5 @@
 #!/bin/fish
+# vim:ft=fish
 
 # Run whenever applying in a new OS
 # {{ .chezmoi.osRelease.id }}
@@ -8,5 +9,4 @@ sudo chsh -s /bin/fish $USER
 export SHELL=/bin/fish
 
 # Install fisher
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-fisher update
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher update
