@@ -23,10 +23,11 @@ sudo xbps-install -y \
     firefox \
     Thunar \
 	zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
-$HOME/void-packages/xbps-src pkg \
-	spotify
-sudo xbps-install -y --repository=$HOME/void-packages/hostdir/binpkgs/nonfree \
-	spotify
+# Build source packages conditionally, seperately
+if not xbps-query spotify >&/dev/null; then
+	$HOME/void-packages/xbps-src pkg spotify
+	sudo xbps-install -y --repository=$HOME/void-packages/hostdir/binpkgs/nonfree spotify
+fi
 # >>>
 
 # Useful CLI programs <<<
@@ -57,6 +58,11 @@ sudo xbps-install -y \
 	xz \
 	zlib zlib-devel
 curl https://pyenv.run | bash
+# >>>
+
+# Formatters <<<
+sudo xbps-install -y \
+	black
 # >>>
 
 # Fonts and themes <<<
@@ -119,6 +125,11 @@ yay -S --noconfirm --needed \
 yay -S --noconfirm --needed \
 	ncurses5-compat-libs \
 	pyenv
+# >>>
+
+# Formatters <<<
+yay -S --noconfirm --needed \
+	black
 # >>>
 
 # Fonts and themes <<<
