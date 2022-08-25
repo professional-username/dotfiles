@@ -50,5 +50,4 @@ fi
 
 feh --bg-fill --random ~/Pictures/Wallpapers/
 
-picom -b
 exec bspwm
