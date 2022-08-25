@@ -1,0 +1,17 @@
+#!/bin/bash
+# vim:ft=bash
+
+{{ if eq .chezmoi.osRelease.id "arch" }} # TODO: Or Artix
+
+# Add repos
+curl -O https://blackarch.org/strap.sh
+chmod +x strap.sh
+sudo ./strap.sh
+
+# Cleanup
+rm strap.sh
+
+# Sync repos
+sudo pacman -Syu --noconfirm
+
+{{ end }}
