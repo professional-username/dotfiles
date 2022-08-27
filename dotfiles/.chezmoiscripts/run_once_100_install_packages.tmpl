@@ -23,7 +23,7 @@ sudo xbps-install -y \
     Thunar \
 	zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
 # Build source packages conditionally, seperately
-if not xbps-query spotify >&/dev/null; then
+if ! xbps-query spotify >&/dev/null; then
 	$HOME/void-packages/xbps-src pkg spotify
 	sudo xbps-install -y --repository=$HOME/void-packages/hostdir/binpkgs/nonfree spotify
 fi
