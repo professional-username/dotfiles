@@ -59,11 +59,14 @@ sudo xbps-install -y \
 	xz \
 	zlib zlib-devel
 curl https://pyenv.run | bash
+sudo xbps-install -y \
+	nodejs
 # >>>
 
 # Formatters <<<
 sudo xbps-install -y \
 	black
+sudo npm install -g @fsouza/prettierd
 # >>>
 
 # Fonts and themes <<<
@@ -126,12 +129,14 @@ yay -S --noconfirm --needed \
 # Programming Languages <<<
 yay -S --noconfirm --needed \
 	ncurses5-compat-libs \
-	pyenv
+	pyenv \
+	nodejs
 # >>>
 
 # Formatters <<<
 yay -S --noconfirm --needed \
-	python-black
+	python-black \
+	prettierd
 # >>>
 
 # Fonts and themes <<<
