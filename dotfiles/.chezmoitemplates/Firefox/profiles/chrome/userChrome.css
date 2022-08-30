@@ -1,3 +1,4 @@
-/*
-I don't currently use any userChrome tweaks, but I would probably put them here.
-*/
+/* Include all userstyles in styles/ in order */
+{{ range (glob (joinPath .chezmoi.sourceDir ".chezmoitemplates/Firefox/profiles/chrome/userchrome/*")) }}
+{{ include . }}
+{{ end }}
