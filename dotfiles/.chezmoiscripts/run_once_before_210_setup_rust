@@ -1,2 +1,3 @@
 #!/bin/fish
 rustup-init -y
+rustup component add rustfmt
