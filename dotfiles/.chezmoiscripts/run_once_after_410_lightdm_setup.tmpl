@@ -1,0 +1,12 @@
+#!/bin/fish
+# vim:ft=fish
+
+# Setup the lightdm service
+{{ if eq .chezmoi.osRelease.id "void" }}
+sudo ln -s /etc/sv/lightdm /var/service/
+{{ else if eq .chezmoi.osRelease.id "arch" }} # TODO: Or Artix
+sudo systemctl enable lightdm
+{{ end }}
+
+sudo cp $HOME/.config/lightdm/lightdm* /etc/lightdm/
+sudo cp $HOME/.config/lightdm/musfealle/ /usr/share/lightdm-webkit/themes/ -r
