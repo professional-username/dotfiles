@@ -47,7 +47,7 @@ sudo xbps-install -y \
 	p7zip
 #TODO: Add organize-rt, webtorrent? 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-if ! xbps-query spicetify >&/dev/null; then
+if ! command -v spicetify >&/dev/null; then
 	curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
 fi
 # >>>
@@ -61,15 +61,20 @@ sudo xbps-install -y \
 	sqlite-devel \
 	xz \
 	zlib zlib-devel
-curl https://pyenv.run | bash
+if ! command -v pyenv >&/dev/null; then
+	curl https://pyenv.run | bash
+fi
 sudo xbps-install -y \
-	nodejs
+	nodejs \
+	rustup
 # >>>
 
 # Formatters <<<
 sudo xbps-install -y \
 	black
-sudo npm install -g @fsouza/prettierd
+if ! command -v prettierd >&/dev/null; then
+	sudo npm install -g @fsouza/prettierd
+fi
 # >>>
 
 # Fonts and themes <<<
@@ -134,7 +139,8 @@ yay -S --noconfirm --needed \
 yay -S --noconfirm --needed \
 	ncurses5-compat-libs \
 	pyenv \
-	nodejs
+	nodejs \
+	rustup
 # >>>
 
 # Formatters <<<

@@ -1,0 +1,2 @@
+#!/bin/fish
+rustup-init -y
