@@ -18,6 +18,10 @@ super + Escape
 alt + Tab
 	rofi -show window -show-icons
 
+# Reload the wallpaper 
+super + shift + p
+	wp
+
 #
 # bspwm hotkeys
 #
