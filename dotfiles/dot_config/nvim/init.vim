@@ -17,8 +17,10 @@ Plug 'nvim-telescope/telescope.nvim' 				" Fuzzy file finder
 Plug 'nvim-lua/plenary.nvim' 						" Lua functions
 call plug#end()
 
-" ━━━━━━━━━━━━━━━━━━━━ FILES ━━━━━━━━━━━━━━━━━━━━
+
+" ━━━━━━━━━━━━━━━━━━━━ UTILITY ━━━━━━━━━━━━━━━━━━━━
 lua << EOF
+-- Setup file browsing
 require("telescope").setup {}
 require("telescope").load_extension "file_browser"
 vim.api.nvim_set_keymap(
@@ -28,6 +30,17 @@ vim.api.nvim_set_keymap(
   { noremap = true }
 )
 EOF
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
 
 " ━━━━━━━━━━━━━━━━━━━━ EYE CANDY ━━━━━━━━━━━━━━━━━━━━
 " Catppuccin theme
