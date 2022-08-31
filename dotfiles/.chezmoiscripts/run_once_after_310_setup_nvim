@@ -2,3 +2,6 @@
 
 # Install plugins
 nvim +'PlugInstall --sync' +qa
+
+# Install coc_nvim langugage servers
+nvim +'CocInstall coc-pyright coc-java coc-tsserver coc-json coc-texlab coc-html coc-css coc-rust-analyzer' +qa
