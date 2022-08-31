@@ -1,4 +1,4 @@
 /* Include all userstyles in styles/ in order */
 {{ range (glob (joinPath .chezmoi.sourceDir ".chezmoitemplates/Firefox/profiles/chrome/userchrome/*")) }}
-{{ include . }}
+{{ output "cat" . | replaceAllRegex ";" "!important;" | replaceAllRegex "!important!important" "!important" }}
 {{ end }}
