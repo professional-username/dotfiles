@@ -1,7 +1,6 @@
 configuration{
     modi: "run,drun,window";
-    lines: 5;
-    font: "Fira Code Nerd Font 10";
+    font: "Fira Code Nerd Font 8";
     show-icons: true;
     icon-theme: "Oranchelo";
     terminal: "st";
@@ -24,7 +23,8 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    height: 360px;
+    height: 40%;
+	width: 20%;
     border: 3px;
 	border-radius: 0;
     border-color: @border-col;

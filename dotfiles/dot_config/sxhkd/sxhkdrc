@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show run
+	rofi -dpi 1 -show run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -16,7 +16,7 @@ super + Escape
 
 # Alt-tab to switch windows
 alt + Tab
-	rofi -show window -show-icons
+	rofi -dpi 1 -show window -show-icons
 
 # Reload the wallpaper 
 super + shift + p
