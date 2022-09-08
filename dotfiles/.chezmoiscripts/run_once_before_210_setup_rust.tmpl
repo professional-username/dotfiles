@@ -1,0 +1,10 @@
+#!/bin/fish
+# vim:ft=fish
+
+{{ if eq .chezmoi.osRelease.id "void" }}
+rustup-init -y
+{{ else if eq .chezmoi.osRelease.id "arch" }} # TODO: Or Artix
+rustup toolchain install stable
+{{ end }}
+
+rustup component add rustfmt
