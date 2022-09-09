@@ -1,0 +1,3 @@
+[data]
+	# Set variables specific to the current machine
+	dpi_scale = 1
