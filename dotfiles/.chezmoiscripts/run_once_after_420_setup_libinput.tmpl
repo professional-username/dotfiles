@@ -1,0 +1,7 @@
+#!/bin/fish
+# vim:filetype=fish
+
+# Re-run on every new distribution: {{.chezmoi.osRelease.id}}
+
+# Copy touchpad config to the right place:
+sudo cp $HOME/.config/libinput/30-touchpad.conf /etc/X11/xorg.conf.d/
