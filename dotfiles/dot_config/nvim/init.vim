@@ -16,6 +16,7 @@ Plug 'nvim-telescope/telescope-file-browser.nvim' 	" File explorer
 Plug 'nvim-telescope/telescope.nvim' 				" Fuzzy file finder
 Plug 'nvim-lua/plenary.nvim' 						" Lua functions
 Plug 'neoclide/coc.nvim', {'branch': 'release'} 	" Autocomplete
+Plug 'tom-doerr/vim_codex' 							" Codex autocomplete
 call plug#end()
 " }}}
 
@@ -143,6 +144,10 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" Codex line autocomplet
+nnoremap  <C-x> :CreateCompletionLine<CR>
+inoremap  <C-x> <Esc>:CreateCompletionLine<CR>
 " }}}
 
 " ━━━━━━━━━━━━━━━━━━━━ EYE CANDY ━━━━━━━━━━━━━━━━━━━━ {{{
