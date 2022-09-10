@@ -1,10 +1,93 @@
+.battery {
+  font-size: 20 * $dpi-scale;
+  .label {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .bolt-black {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 18;
+    color: $base;
+  }
+  .bolt-white {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 18;
+    color: $text;
+  }
+  .scale {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  scale trough {
+    all: unset;
+    // background-color: $green;
+    //border-radius: 50px;
+    min-height: 10px;
+    min-width: 20px;
+    margin-top: 4px;
+    margin-left: 5px;
+    margin-right: 5px;
+    // border: 2 * $dpi-scale solid $red;
+  }
+  scale trough highlight {
+    all: unset;
+    color: #000000;
+    background-color: $text;
+    //border-radius: 10px;
+  }
+}
 
+.time {
+  font-size: 25 * $dpi-scale;
+  font-weight: bold;
+  .divider {
+    color: $surface0;
+    font-size: 7 * $dpi-scale;
+  }
+}
 
-.circular_tracker{
-	.progress{
-		color: $blue;
-	}
-	.label{
-		font-size: 13;
-	}
+.system_tray {
+  font-size: 25 * $dpi-scale;
+}
+.circular_tracker {
+  .progress0 {
+    color: $green;
+  }
+  .progress1 {
+    color: $yellow;
+  }
+  .progress2 {
+    color: $peach;
+  }
+  .progress3 {
+    color: $red;
+  }
+  .label {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 13 * $dpi-scale;
+  }
+}
+
+.power_menu {
+  font-size: 20 * $dpi-scale;
+  .button {
+    background-color: $base;
+    border-radius: 50%;
+    border: 2 * $dpi-scale solid $base;
+  }
+  .button:hover {
+    background-color: $base;
+    color: $overlay0;
+    border-color: $surface0;
+  }
+  .label {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .shutdown {
+    color: $red;
+  }
+  .reboot {
+    color: $peach;
+  }
+  .logout {
+    color: $lavender;
+  }
 }

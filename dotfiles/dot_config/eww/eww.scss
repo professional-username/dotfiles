@@ -1,8 +1,14 @@
+// Default values
 @import "catppuccin";
-@import "bar/bar.scss";
+$dpi-scale: 2;
 
-*{
-	font-family: "FiraCode Nerd Font Mono";
-	border: 0px solid $rosewater;
+* {
+  all: unset;
+  font-family: "FiraCode Nerd Font Mono";
+  // border: 1px solid $rosewater;
+  background-color: $base;
+  color: $text;
 }
 
+// Specific theming
+@import "bar/bar.scss";

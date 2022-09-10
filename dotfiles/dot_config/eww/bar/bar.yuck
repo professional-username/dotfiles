@@ -1,23 +1,21 @@
-; Filepaths have to be relating to eww config dir ¯\_('-')_/¯
-(include "./bar/system.yuck")
-(include "./bar/time.yuck")
-(include "./bar/power.yuck")
-(include "./bar/os.yuck")
-(include "./bar/workspaces.yuck")
+; vim:foldmethod=marker
 
+; ━━━━━━━━━━━━━━━━ BAR ARRANGEMENT ━━━━━━━━━━━━━━━━ {{{
 (defwindow bar
   :monitor 0
   :geometry (geometry :x "0%"
               :y "0%"
-              :width "60px"
+              :width "3%"
               :height "100%"
               :anchor "left center")
   :stacking "fg"
-  :reserve (struts :distance "60px" :side "left")
+  :reserve (struts :distance "120" :side "left")
   :windowtype "dock"
   :wm-ignore false
   (box
     :orientation "v"
+    :space-evenly false
+    :valign "fill"
     (top)
     (bottom)
   )
@@ -28,18 +26,197 @@
       :valign "start"
       :orientation "v"
       :space-evenly false
+      :vexpand true
       (os-icon)
-      (workspaces)
     )
   )
 
 (defwidget bottom []
     (box
       :valign "end"
+      :vexpand true
       :orientation "v"
       :space-evenly false
+      :spacing {5 * dpi-scale}
+      (battery)
       (system-tray)
       (time)
       (powermenu)
     )
   )
+; }}}
+
+; ━━━━━━━━━━━━━━━━ WIDGETS ━━━━━━━━━━━━━━━━ {{{
+
+; Battery {{{
+; This little thing took like 4 hours :(
+(defwidget battery []
+  (overlay
+    :orientation "v"
+    :class "battery"
+    :valign "center"
+    :tooltip {EWW_BATTERY.total_avg}
+    (box :width 50 :height 50)
+    (box :orientation "v" :valign "center"
+      (scale
+      :class "scale"
+      :flipped true
+      :height 34
+      :min 0
+      :max 100
+      :active false
+      :value {EWW_BATTERY.total_avg}
+      :orientation "v"))
+    (label :class "label" :text "")
+    (label 
+      :visible {EWW_BATTERY.BAT1.status == "Charging" ? true : false} 
+      :class "bolt-${ charge-blink ? "black" : "white" }" 
+      :text "")
+  )
+)
+; }}}
+
+; Time {{{
+(defwidget time []
+  (box :class "time"
+    :orientation "v"
+    :space-evenly false
+    :spacing {8 * dpi-scale}
+    (label :class "divider" :text "━━━━━━━")
+    (box
+      :orientation "v"
+      :spacing {3 * dpi-scale}
+      (label :class "hour" :text hour)
+      (label :class "min" :text min)
+    )
+    (label :class "divider" :text "━━━━━━━")
+  )
+)
+; }}}
+
+; System Monitoring {{{
+
+; :: System Tray {{{
+; Folds out to display several system trackers when hoeverd over
+(defwidget system-tray []
+  (eventbox :class "system_tray"
+    :onhover "eww update system-tray-visible=true"
+    :onhoverlost "eww update system-tray-visible=false"
+    (box
+      :space-evenly false
+      :spacing {20 * dpi-scale}
+      :orientation "v"
+      (revealer :class "tray"
+        :transition "slideup"
+        :reveal system-tray-visible
+        (box
+          :orientation "v"
+          :spacing {20 * dpi-scale}
+          (circular-tracker 
+            :tracked-value {100 * EWW_RAM["used_mem"] / EWW_RAM["total_mem"]}
+            :suffix "%"
+            :tooltip-label "RAM")
+          (circular-tracker 
+            :tracked-value {EWW_CPU.avg}
+            :suffix "%"
+            :tooltip-label "CPU")
+          (circular-tracker 
+            :tracked-value {EWW_TEMPS.CPU}
+            :suffix "°"
+            :tooltip-label "TEMP")
+        )
+      )
+      (label :class "label"
+        :text "")
+    )
+  )
+)
+; :: }}}
+
+; :: Circular Tracker {{{
+; Like a speedometer - a percentage surrounded by a circular bar==
+(defwidget circular-tracker [tracked-value tooltip-label ?suffix]
+  (overlay :class "circular_tracker" 
+    :tooltip tooltip-label
+    :valign "center"
+    :halign "center"
+    (circular-progress :class "progress${round(3 * tracked-value / 100, 0)}"
+      :width {51 * dpi-scale}
+      :height {51 * dpi-scale}
+      :value tracked-value
+      :thickness {6 * dpi-scale}
+      :start-at 25)
+    (label :class "label"
+      :text "${round(tracked-value, 0)}${suffix}")
+  )
+)
+; :: }}}
+
+; }}}
+
+; Power Menu {{{
+(defwidget powermenu []
+  (eventbox :class "power_menu"
+    :onhover "eww update powermenu-visible=true"
+    :onhoverlost "eww update powermenu-visible=false"
+    (box
+      :space-evenly false
+      :spacing 15
+      :orientation "v"
+      :halign "center"
+      (revealer :class "tray"
+        :height 0
+        :transition "slideup"
+        :reveal powermenu-visible
+        (box
+          :orientation "v"
+          :spacing 15
+          ; TODO: Make buttons actually functional
+          (system-button 
+            :symbol "" 
+            :label "logout")
+          (system-button 
+            :symbol "敏" 
+            :label "reboot")
+        )
+      )
+      (system-button 
+        :symbol "" 
+        :label "shutdown")
+      (box :height {3 * dpi-scale})
+    )
+  )
+)
+(defwidget system-button [symbol label]
+  (button :class "button"
+      :height {35 * dpi-scale}
+      :width {35 * dpi-scale}
+      (label :text symbol :class "${label} label"))
+)
+; }}}
+
+; OS Icon {{{
+; Shows an icon corresponding to the current os
+(defwidget os-icon []
+  (label :class "os_icon"
+    :text "" ; TODO: This should be some kind of script
+  )
+)
+; }}}
+
+; }}}
+
+; ━━━━━━━━━━━━━━━━ VARIABLES ━━━━━━━━━━━━━━━━ {{{
+; Static vars
+(defvar dpi-scale 2)
+(defvar powermenu-visible false)
+(defvar system-tray-visible false)
+
+; Polling variables
+(defpoll hour	:interval "1s"	"date '+%H'")
+(defpoll min	:interval "1s"	"date '+%M'")
+(defpoll charge-blink   
+  :interval "1s"  
+  :run-while {EWW_BATTERY.BAT1.status == "Charging" ? true : false} 
+  "if [ `eww get charge-blink` = true ] ; then echo false; else echo true; fi")
+; }}}

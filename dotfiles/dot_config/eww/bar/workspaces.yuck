@@ -1,4 +1,0 @@
-(defwidget workspaces []
-	(literal :content workspace))
-
-(deflisten workspace "$HOME/.config/eww/bar/scripts/workspace")
