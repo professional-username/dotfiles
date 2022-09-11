@@ -219,7 +219,6 @@
 
 ; ━━━━━━━━━━━━━━━━ VARIABLES ━━━━━━━━━━━━━━━━ {{{
 ; Static vars
-(defvar dpi-scale 2)
 (defvar powermenu-visible false)
 (defvar system-tray-visible false)
 
