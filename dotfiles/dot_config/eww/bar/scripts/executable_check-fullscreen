@@ -1,0 +1,9 @@
+#!/bin/fish
+# Print true if currently focused node is fullscreen, false otherwise
+bspc subscribe desktop node_state | while read _
+    if test -z (bspc query -T -n | grep "\"state\":\"fullscreen\"")
+        echo false
+    else
+        echo true
+    end
+end

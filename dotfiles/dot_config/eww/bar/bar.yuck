@@ -2,17 +2,19 @@
 
 ; ━━━━━━━━━━━━━━━━ BAR ARRANGEMENT ━━━━━━━━━━━━━━━━ {{{
 (defwindow bar
-  :monitor 0
-  :geometry (geometry :x "0%"
+  :geometry (geometry :x "1%"
               :y "0%"
               :width "3%"
-              :height "100%"
+              :height "95%"
               :anchor "left center")
-  :stacking "fg"
-  :reserve (struts :distance "120" :side "left")
+  :stacking "bg"
+  :reserve (struts :distance "4%" :side "left")
   :windowtype "dock"
   :wm-ignore false
   (box
+    :class "bar_visible_${!is-fullscreen}"
+    :visible {!is-fullscreen}
+    :width 0
     :orientation "v"
     :space-evenly false
     :valign "fill"
@@ -27,7 +29,10 @@
       :orientation "v"
       :space-evenly false
       :vexpand true
+      :spacing {5 * dpi-scale}
+      (box :height {5 * dpi-scale})
       (os-icon)
+      (workspaces)
     )
   )
 
@@ -37,9 +42,9 @@
       :vexpand true
       :orientation "v"
       :space-evenly false
-      :spacing {5 * dpi-scale}
-      (battery)
+      :spacing {10 * dpi-scale}
       (system-tray)
+      (battery)
       (time)
       (powermenu)
     )
@@ -47,6 +52,12 @@
 ; }}}
 
 ; ━━━━━━━━━━━━━━━━ WIDGETS ━━━━━━━━━━━━━━━━ {{{
+
+; Workspaces {{{
+(defwidget workspaces []
+  (literal :content workspace-code)
+)
+; }}}
 
 ; Battery {{{
 ; This little thing took like 4 hours :(
@@ -56,12 +67,12 @@
     :class "battery"
     :valign "center"
     :tooltip {EWW_BATTERY.total_avg}
-    (box :width 50 :height 50)
+    (box :width {25 * dpi-scale} :height {25 * dpi-scale})
     (box :orientation "v" :valign "center"
       (scale
       :class "scale"
       :flipped true
-      :height 34
+      :height {18 * dpi-scale}
       :min 0
       :max 100
       :active false
@@ -69,8 +80,8 @@
       :orientation "v"))
     (label :class "label" :text "")
     (label 
-      :visible {EWW_BATTERY.BAT1.status == "Charging" ? true : false} 
-      :class "bolt-${ charge-blink ? "black" : "white" }" 
+      :visible {EWW_BATTERY.BAT1.status != "Discharging" ? true : false} 
+      :class "bolt bolt-${ charge-blink || EWW_BATTERY.BAT1.status == "Full" ? "black" : "white" }" 
       :text "")
   )
 )
@@ -199,7 +210,7 @@
 ; Shows an icon corresponding to the current os
 (defwidget os-icon []
   (label :class "os_icon"
-    :text "" ; TODO: This should be some kind of script
+    :text {os-symbol}
   )
 )
 ; }}}
@@ -219,4 +230,10 @@
   :interval "1s"  
   :run-while {EWW_BATTERY.BAT1.status == "Charging" ? true : false} 
   "if [ `eww get charge-blink` = true ] ; then echo false; else echo true; fi")
+
+; Listening variables
+(deflisten workspace-code "bar/scripts/ws")
+(deflisten os-symbol "bar/scripts/os") ; Maybe shouldn't be a listen variable
+(deflisten is-fullscreen :initial false "bar/scripts/check-fullscreen")
 ; }}}
+

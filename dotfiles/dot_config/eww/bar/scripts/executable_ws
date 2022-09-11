@@ -1,0 +1,47 @@
+#!/bin/fish
+
+# Assemble the workspace widget
+function workspaces
+    set widget "\
+(box
+    :class \"workspace\" 
+    :orientation \"v\"	
+    :halign \"center\"	
+    :valign \"start\"	 
+    :space-evenly \"true\" 
+    :spacing {-5 * dpi-scale}"
+
+    for ws in (bspc query -D --names)
+        # Set occupied value
+        if test -n (echo "$( bspc query -D -d .occupied --names | grep -x "$ws" )")
+            set oc 1
+        else
+            set oc 0
+        end
+        # Set focused value
+        if test -n (echo "$( bspc query -D -d .focused --names | grep -x "$ws" )")
+            set foc 1
+        else
+            set foc 0
+        end
+        # Assemble button widget
+        set button "\
+    (button :onclick \"bspc desktop -f $ws\"	
+        (label
+            :class \"ws$ws oc$oc foc$foc\"
+            :text \"\"))"
+        # Attach button to workspace widget
+        # set widget -a $button # For nicely formatted code
+        set widget (string join \n $widget $button) # For single line
+    end
+    # set widget -a \) # For nicely formatted code
+    set widget ( string join "" $widget \) ) # For single line
+
+    echo $widget
+end
+
+# Print widget setup to stdout as desktop changes
+workspaces
+bspc subscribe desktop node_transfer | while read _
+    workspaces
+end

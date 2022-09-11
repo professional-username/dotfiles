@@ -1,16 +1,45 @@
+// TODO: Css is a bit of a mess, needs tyding and documentation
+
+.bar_visible_true {
+  border: 4px solid $lavender;
+  background-color: $base;
+}
+.bar_visible_false {
+  all: unset;
+}
+
+.os_icon {
+  font-size: 35 * $dpi-scale;
+}
+
+.workspace {
+  font-size: 25 * $dpi-scale;
+  .oc0 {
+    color: $surface0;
+  }
+  .oc1 {
+    color: $overlay1;
+  }
+  .foc1 {
+    color: $lavender;
+    font-size: 30 * $dpi-scale;
+  }
+}
+
 .battery {
   font-size: 20 * $dpi-scale;
   .label {
     background-color: rgba(0, 0, 0, 0);
   }
-  .bolt-black {
+  .bolt {
     background-color: rgba(0, 0, 0, 0);
-    font-size: 18;
+    font-size: 9 * $dpi-scale;
+    margin-top: 2 * $dpi-scale;
+  }
+  .bolt-black {
     color: $base;
   }
   .bolt-white {
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 18;
     color: $text;
   }
   .scale {
@@ -18,20 +47,16 @@
   }
   scale trough {
     all: unset;
-    // background-color: $green;
-    //border-radius: 50px;
-    min-height: 10px;
-    min-width: 20px;
-    margin-top: 4px;
-    margin-left: 5px;
-    margin-right: 5px;
-    // border: 2 * $dpi-scale solid $red;
+    min-height: 5px * $dpi-scale;
+    min-width: 10px * $dpi-scale;
+    margin-top: 2px * $dpi-scale;
+    margin-left: 2.5px * $dpi-scale;
+    margin-right: 2.5px * $dpi-scale;
   }
   scale trough highlight {
     all: unset;
     color: #000000;
     background-color: $text;
-    //border-radius: 10px;
   }
 }
 
