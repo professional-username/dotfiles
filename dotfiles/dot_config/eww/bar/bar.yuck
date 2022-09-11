@@ -11,15 +11,19 @@
   :reserve (struts :distance "4%" :side "left")
   :windowtype "dock"
   :wm-ignore false
-  (box
-    :class "bar_visible_${!is-fullscreen}"
-    :visible {!is-fullscreen}
-    :width 0
-    :orientation "v"
-    :space-evenly false
-    :valign "fill"
-    (top)
-    (bottom)
+  (eventbox
+    :onhover "eww update hovering=true"
+    :onhoverlost "eww update hovering=false"
+    (box
+      :class "bar_visible_${!is-fullscreen || hovering}"
+      :visible {!is-fullscreen || hovering}
+      :width 0
+      :orientation "v"
+      :space-evenly false
+      :valign "fill"
+      (top)
+      (bottom)
+    )
   )
 )
 
@@ -219,6 +223,7 @@
 
 ; ━━━━━━━━━━━━━━━━ VARIABLES ━━━━━━━━━━━━━━━━ {{{
 ; Static vars
+(defvar hovering false)
 (defvar powermenu-visible false)
 (defvar system-tray-visible false)
 
