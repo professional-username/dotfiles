@@ -145,9 +145,9 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-" Codex line autocomplet
-nnoremap  <C-x> :CreateCompletionLine<CR>
-inoremap  <C-x> <Esc>:CreateCompletionLine<CR>
+" Codex line auto complete
+nnoremap  <C-x> a<Space><Space><Esc>D:CreateCompletionLine<CR>
+inoremap  <C-x> <Space><Space><Esc>D:CreateCompletionLine<CR>
 " }}}
 
 " ━━━━━━━━━━━━━━━━━━━━ EYE CANDY ━━━━━━━━━━━━━━━━━━━━ {{{
