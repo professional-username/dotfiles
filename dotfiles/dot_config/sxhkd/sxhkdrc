@@ -6,17 +6,15 @@
 super + Return
 	kitty
 
-# program launcher
-super + @space
-	rofi -dpi 1 -show run
+# Rofi menus
+super + shift + s
+	sh $HOME/.config/rofi/bin/screenshot
+super + space
+	sh $HOME/.config/rofi/bin/runner
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
-
-# Alt-tab to switch windows
-alt + Tab
-	rofi -dpi 1 -show window -show-icons
 
 # Reload the wallpaper 
 super + shift + p
