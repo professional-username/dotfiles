@@ -192,12 +192,14 @@
             :label "logout")
           (system-button 
             :symbol "敏" 
-            :label "reboot")
+            :label "reboot"
+            :onclick "reboot")
         )
       )
       (system-button 
         :symbol "" 
-        :label "shutdown")
+        :label "shutdown"
+        :onclick "poweroff")
       (box :height {3 * dpi-scale})
     )
   )
