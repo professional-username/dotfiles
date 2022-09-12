@@ -160,6 +160,8 @@ colorscheme catppuccin
 " Tabs
 set tabstop=4
 set shiftwidth=0
+" Quickly remove search highlights
+nmap <F9> :nohl
 " }}}
 
 " ━━━━━━━━━━━━━━━━━━━━ FORMATTING ━━━━━━━━━━━━━━━━━━━━ {{{
