@@ -1,0 +1,4 @@
+#!/bin/fish
+
+# Force rbw to use ncurses interface for password entry
+rbw config set pinentry pinentry-curses
