@@ -1,6 +1,0 @@
-[theme]
-name=Musfealle
-description=A simple 'no-mouse-needed' lightdm greeter
-engine=lightdm-webkit-greeter
-url=index.html
-session=xfce
