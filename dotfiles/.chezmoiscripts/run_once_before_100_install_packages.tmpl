@@ -48,8 +48,9 @@ sudo xbps-install -y \
 	bat \
 	rbw \
 	p7zip \
-	jrnl
-#TODO: Add organize-rt, webtorrent? 
+	jrnl \
+	transmission
+#TODO: Add organize-rt?
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 if ! command -v spicetify >&/dev/null; then
 	curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
@@ -140,7 +141,8 @@ yay -S --noconfirm --needed \
 	spicetify-cli \
 	rbw \
 	p7zip \
-	jrnl
+	jrnl \
+	transmission
 # >>>
 
 # Programming Languages <<<
