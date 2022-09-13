@@ -1,6 +1,9 @@
 #!/bin/fish
 # vim:filetype=fish:foldmethod=marker:fmr=<<<,>>>
 
+# Can only run once spotify has been launched at least once
+{{ if or (stat "/opt/spotify") (stat "/usr/libexec/spotify") }}
+
 # Spicetify setup <<<
 {{ if eq .chezmoi.osRelease.id "void" }}
 sudo ln -s /usr/libexec/spotify /opt/spotify
@@ -16,3 +19,5 @@ spicetify config color_scheme lavender
 spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
 spicetify config extensions catppuccin-mocha.js
 spicetify backup apply
+
+{{ end }}
