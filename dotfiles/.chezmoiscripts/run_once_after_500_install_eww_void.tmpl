@@ -1,0 +1,28 @@
+#!/bin/fish
+# vim:ft=fish
+
+# On void, eww has to built from source, so must be installed after rust is set up
+
+{{ if eq .chezmoi.osRelease.id "void" }}
+
+# Install prerequisites
+sudo xbps-install -y \
+    gtk+3-devel \
+    gtk-layer-shell-devel \
+    pango-devel \
+    gdk-pixbuf-devel \
+    cairo-devel \
+    glib-devel
+
+git clone https://github.com/elkowar/eww
+cd eww
+cargo build --release
+cd target/release
+chmod +x ./eww
+cp eww $HOME/.cargo/bin
+
+# Cleanup
+cd ../../../
+rm -rf eww
+
+{{ end }}
