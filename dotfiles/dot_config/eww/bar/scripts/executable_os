@@ -1,6 +1,6 @@
 #!/bin/fish
 switch (cat /etc/os-release | grep -e "^ID=" | string split -f 2 "=")
-    case void
+    case \"void\"
         echo 
     case arch
         echo 
