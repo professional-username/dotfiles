@@ -3,6 +3,8 @@
 
 {{ if eq .chezmoi.osRelease.id "void" }}
 
+sudo xbps-install -y git
+
 cd ~
 git clone --depth=1 https://github.com/void-linux/void-packages
 cd void-packages
