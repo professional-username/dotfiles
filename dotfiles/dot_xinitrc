@@ -52,4 +52,6 @@ feh --bg-fill --random ~/Pictures/Wallpapers/
 
 picom -b --experimental-backends
 
+eww open bar
+
 exec bspwm
