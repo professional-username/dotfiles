@@ -67,6 +67,7 @@ sudo xbps-install -y \
 	xz \
 	zlib zlib-devel
 if ! command -v pyenv >&/dev/null; then
+	rm -rf ~/.pyenv
 	curl https://pyenv.run | bash
 fi
 sudo xbps-install -y \
