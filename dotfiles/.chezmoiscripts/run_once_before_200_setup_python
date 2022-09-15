@@ -1,3 +1,8 @@
 #!/bin/fish
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+
+# Install latest python version
+set pyversion (pyenv install -l | string trim | grep -Px "[\d\.]+" | tail -n 1)
+pyenv install -f $pyversion
+pyenv global $pyversion
