@@ -2,7 +2,7 @@
 # vim:filetype=fish:foldmethod=marker:fmr=<<<,>>>
 
 # Can only run once spotify has been launched at least once
-{{ if or (stat "/opt/spotify") (stat "/usr/libexec/spotify") }}
+{{ if stat (joinPath .chezmoi.homeDir ".config/spotify/") }}
 
 # Spicetify setup <<<
 {{ if eq .chezmoi.osRelease.id "void" }}
