@@ -33,8 +33,8 @@
       :orientation "v"
       :space-evenly false
       :vexpand true
-      :spacing {5 * dpi-scale}
-      (box :height {5 * dpi-scale})
+      :spacing {round(5 * dpi-scale, 0)}
+      (box :height {round(5 * dpi-scale, 0)})
       (os-icon)
       (workspaces)
     )
@@ -46,7 +46,7 @@
       :vexpand true
       :orientation "v"
       :space-evenly false
-      :spacing {10 * dpi-scale}
+      :spacing {round(10 * dpi-scale, 0)}
       (system-tray)
       (battery)
       (time)
@@ -71,12 +71,12 @@
     :class "battery"
     :valign "center"
     :tooltip {EWW_BATTERY.total_avg}
-    (box :width {25 * dpi-scale} :height {25 * dpi-scale})
+    (box :width {round(25 * dpi-scale, 0)} :height {round(25 * dpi-scale, 0)})
     (box :orientation "v" :valign "center"
       (scale
       :class "scale"
       :flipped true
-      :height {18 * dpi-scale}
+      :height {round(18 * dpi-scale, 0)}
       :min 0
       :max 100
       :active false
@@ -96,11 +96,11 @@
   (box :class "time"
     :orientation "v"
     :space-evenly false
-    :spacing {8 * dpi-scale}
+    :spacing {round(8 * dpi-scale, 0)}
     (label :class "divider" :text "━━━━━━━")
     (box
       :orientation "v"
-      :spacing {3 * dpi-scale}
+      :spacing {round(3 * dpi-scale, 0)}
       (label :class "hour" :text hour)
       (label :class "min" :text min)
     )
@@ -119,14 +119,14 @@
     :onhoverlost "eww update system-tray-visible=false"
     (box
       :space-evenly false
-      :spacing {20 * dpi-scale}
+      :spacing {round(20 * dpi-scale, 0)}
       :orientation "v"
       (revealer :class "tray"
         :transition "slideup"
         :reveal system-tray-visible
         (box
           :orientation "v"
-          :spacing {20 * dpi-scale}
+          :spacing {round(20 * dpi-scale, 0)}
           (circular-tracker 
             :tracked-value {100 * EWW_RAM["used_mem"] / EWW_RAM["total_mem"]}
             :suffix "%"
@@ -156,10 +156,10 @@
     :valign "center"
     :halign "center"
     (circular-progress :class "progress${round(3 * tracked-value / 100, 0)}"
-      :width {51 * dpi-scale}
-      :height {51 * dpi-scale}
+      :width {round(51 * dpi-scale, 0)}
+      :height {round(51 * dpi-scale, 0)}
       :value tracked-value
-      :thickness {6 * dpi-scale}
+      :thickness {round(6 * dpi-scale, 0)}
       :start-at 25)
     (label :class "label"
       :text "${round(tracked-value, 0)}${suffix}")
@@ -200,14 +200,14 @@
         :symbol "" 
         :label "shutdown"
         :onclick "poweroff")
-      (box :height {3 * dpi-scale})
+      (box :height {round(3 * dpi-scale, 0)})
     )
   )
 )
 (defwidget system-button [symbol label]
   (button :class "button"
-      :height {35 * dpi-scale}
-      :width {35 * dpi-scale}
+      :height {round(35 * dpi-scale, 0)}
+      :width {round(35 * dpi-scale, 0)}
       (label :text symbol :class "${label} label"))
 )
 ; }}}
