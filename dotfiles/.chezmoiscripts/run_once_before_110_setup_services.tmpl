@@ -6,4 +6,8 @@
 sudo ln -s /etc/sv/dbus/ /var/service/
 sudo sv enable dbus
 
+{{ else if eq .chezmoi.osRelease.id "arch" }} # TODO: Or Artix
+
+sudo systemctl enable bluetooth.service
+
 {{ end }}
