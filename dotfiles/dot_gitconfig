@@ -1,3 +1,5 @@
 [user]
 	email = 9hacahn5@anonaddy.me
 	name = professional-username
+[pull]
+	rebase = false
