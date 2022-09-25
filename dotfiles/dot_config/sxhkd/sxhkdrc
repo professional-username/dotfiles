@@ -20,6 +20,14 @@ super + Escape
 super + shift + p
 	wp
 
+# Volume control
+XF86AudioRaiseVolume
+	pulsemixer --change-volume +5
+XF86AudioLowerVolume
+	pulsemixer --change-volume -5
+XF86AudioMute
+	pulsemixer --toggle-mute
+
 #
 # bspwm hotkeys
 #
