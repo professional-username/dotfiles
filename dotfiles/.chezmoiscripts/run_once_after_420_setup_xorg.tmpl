@@ -3,6 +3,6 @@
 
 # Re-run on every new distribution: {{.chezmoi.osRelease.id}}
 
-# Copy touchpad config to the right place:
+# Copy configs to the right place:
 sudo mkdir -p /etc/X11/xorg.conf.d/
-sudo cp $HOME/.config/libinput/30-touchpad.conf /etc/X11/xorg.conf.d/
+sudo cp $HOME/.config/xorg/* /etc/X11/xorg.conf.d/
