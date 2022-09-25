@@ -163,7 +163,7 @@ set shiftwidth=0
 autocmd BufRead,BufNewFile *.js,*.html
       \ setlocal tabstop=2
 " Quickly remove search highlights
-nmap <F9> :nohl
+nmap <F9> :nohl<Enter>
 " }}}
 
 " ━━━━━━━━━━━━━━━━━━━━ FORMATTING ━━━━━━━━━━━━━━━━━━━━ {{{
