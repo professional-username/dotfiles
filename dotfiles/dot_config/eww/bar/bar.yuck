@@ -47,7 +47,9 @@
       :orientation "v"
       :space-evenly false
       :spacing {round(10 * dpi-scale, 0)}
-      (system-tray)
+      ; (brightness)
+      (volume)
+      ; (system-tray)
       (battery)
       (time)
       (powermenu)
@@ -56,6 +58,43 @@
 ; }}}
 
 ; ━━━━━━━━━━━━━━━━ WIDGETS ━━━━━━━━━━━━━━━━ {{{
+
+; Volume{{{
+(defwidget volume []
+  (eventbox :class "volume"
+    :onhover "eww update volume-visible=true"
+    :onhoverlost "eww update volume-visible=false"
+    (box
+      :space-evenly false
+      :spacing {round(5 * dpi-scale, 0)}
+      :orientation "v"
+      (revealer :class "bar"
+        :transition "slideup"
+        :reveal volume-visible
+        (scale
+          :class "scale"
+          :flipped true
+          :height {round(90 * dpi-scale, 0)}
+          :min 0
+          :max 100
+          :active true
+          :value current-volume
+          :onchange "pulsemixer --set-volume {}"
+          :orientation "v"))
+      (button :class "label ${current-volume > 50 ? "high" : "low"}"
+        :onclick "pulsemixer --toggle-mute"
+        "${muted == 1 ? "婢" :
+                            current-volume > 50 ? "墳" : "奔"
+        }")
+    )
+  )
+)
+; }}}
+; Brightness {{{
+; (defwidget brightness []
+;   ""
+; )
+; }}}
 
 ; Workspaces {{{
 (defwidget workspaces []
@@ -228,6 +267,7 @@
 (defvar hovering false)
 (defvar powermenu-visible false)
 (defvar system-tray-visible false)
+(defvar volume-visible false)
 
 ; Polling variables
 (defpoll hour	:interval "1s"	"date '+%H'")
@@ -236,6 +276,8 @@
   :interval "1s"  
   :run-while {EWW_BATTERY.BAT1.status == "Charging" ? true : false} 
   "if [ `eww get charge-blink` = true ] ; then echo false; else echo true; fi")
+(defpoll current-volume :interval "1s" "bar/scripts/volume")
+(defpoll muted :interval "1s" "pulsemixer --get-mute")
 
 ; Listening variables
 (deflisten workspace-code "bar/scripts/ws")

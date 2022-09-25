@@ -1,0 +1,2 @@
+#!/bin/fish
+pulsemixer --get-volume | string split " " | head -n 1

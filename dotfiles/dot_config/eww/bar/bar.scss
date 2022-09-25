@@ -1,5 +1,36 @@
 // TODO: Css is a bit of a mess, needs tyding and documentation
 
+.volume {
+  font-size: 23 * $dpi-scale;
+  .low {
+    font-size: 18 * $dpi-scale;
+    margin-bottom: 5px * $dpi-scale;
+  }
+
+  .bar {
+    .scale {
+      background-color: rgba(0, 0, 0, 0);
+    }
+    scale trough {
+      all: unset;
+      min-height: 15px * $dpi-scale;
+      min-width: 12px * $dpi-scale;
+      margin-top: 2px * $dpi-scale;
+      margin-left: 2.5px * $dpi-scale;
+      margin-right: 2.5px * $dpi-scale;
+      border-radius: 100;
+
+      background-color: $surface0;
+    }
+    scale trough highlight {
+      all: unset;
+      color: #000000;
+      border-radius: 100;
+      background-color: $blue;
+    }
+  }
+}
+
 .bar_visible_true {
   border: 4px solid $lavender;
   background-color: $base;
