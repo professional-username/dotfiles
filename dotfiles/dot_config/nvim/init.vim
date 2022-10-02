@@ -160,7 +160,7 @@ colorscheme catppuccin
 " Tabs
 set tabstop=4
 set shiftwidth=0
-autocmd BufRead,BufNewFile *.js,*.html
+autocmd BufRead,BufNewFile *.js,*.html,*.java
       \ setlocal tabstop=2
 " Quickly remove search highlights
 nmap <F9> :nohl<Enter>
