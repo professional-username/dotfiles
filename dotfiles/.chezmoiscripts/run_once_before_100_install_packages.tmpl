@@ -80,14 +80,18 @@ if ! command -v pyenv >&/dev/null; then
 fi
 sudo xbps-install -y \
 	nodejs \
-	rustup
+	rustup \
+	openjdk
 # >>>
 
 # Formatters <<<
 sudo xbps-install -y \
 	black
-if ! command -v prettierd >&/dev/null; then
+if ! npm list --location=global | grep prettierd >&/dev/null; then
 	sudo npm install -g @fsouza/prettierd
+fi
+if ! npm list --location=global | grep prettier-plugin-java >&/dev/null; then
+	sudo npm install -g prettier-plugin-java
 fi
 # >>>
 
@@ -171,13 +175,17 @@ yay -S --noconfirm --needed \
 	pyenv \
 	python-pip \
 	nodejs \
-	rustup
+	rustup \
+	jdk-openjdk
 # >>>
 
 # Formatters <<<
-yay -S --noconfirm --needed \
+yay S --noconfirm --needed \
 	python-black \
 	prettierd
+if ! npm list --location=global | grep prettier-plugin-java >&/dev/null; then
+	sudo npm install -g prettier-plugin-java
+fi
 # >>>
 
 # Fonts and themes <<<
