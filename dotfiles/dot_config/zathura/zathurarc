@@ -2,4 +2,6 @@ set recolor true
 set recolor-keephue true
 set recolor-reverse-video true 
 
+set selection-clipboard clipboard
+
 include catppuccin-mocha
