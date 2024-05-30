@@ -25,6 +25,11 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
+  programs.git = {
+    userEmail = "jv7edi9r@anonaddy.me";
+    userName = "mirrored-basilisk";
+  };
+
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
