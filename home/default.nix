@@ -1,12 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
@@ -22,7 +16,7 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  home.packages = with pkgs; [ lunarvim ];
+  home.packages = with pkgs; [ lunarvim fira-code-nerdfont nixfmt-classic ];
   # programs.lunarvim.enable = true;
 
   # Enable home-manager and git

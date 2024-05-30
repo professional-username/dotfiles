@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{ config, pkgs, ... }: {
   imports = [ ];
   programs.git = {
     enable = true;

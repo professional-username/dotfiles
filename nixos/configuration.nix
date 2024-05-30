@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -76,7 +75,7 @@
   };
 
   # environment.sessionVariables = {
-    # FLAKE = "/home/username/.config/nixos-config";
+  # FLAKE = "/home/username/.config/nixos-config";
   # };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -87,10 +86,11 @@
     isNormalUser = true;
     description = "username";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kate
-    #  thunderbird
-    ];
+    packages = with pkgs;
+      [
+        kate
+        #  thunderbird
+      ];
   };
 
   # Install firefox.
@@ -107,8 +107,8 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   programs.nh = {
@@ -116,7 +116,6 @@
     clean.enable = true;
     flake = "/home/username/.config/nixos-config";
   };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
