@@ -7,6 +7,7 @@
     # inputs.nix-colors.homeManagerModule
     ./lvim
     ./git.nix
+    ./firefox
   ];
 
   home = {
