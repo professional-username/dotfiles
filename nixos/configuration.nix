@@ -7,7 +7,6 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./firefox.nix
   ];
 
   # Bootloader.
@@ -93,9 +92,6 @@
         #  thunderbird
       ];
   };
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
