@@ -7,6 +7,7 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./nvidia.nix
   ];
 
   # Bootloader.
@@ -23,7 +24,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  powerManagement.enable = true;
+  # powerManagement.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/London";
