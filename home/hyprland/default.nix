@@ -5,19 +5,44 @@
     enable = true;
 
     settings = {
+      input = {
+        kb_options = "caps:escape";
+        touchpad.natural_scroll = true;
+      };
       "$mod" = "SUPER";
+      # Mouse Binds
+      bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
+      # Keybinds
       bind = [
-        "$mod, F, exec, firefox"
+        # Program rules
+        "$mod, N, exec, firefox"
         "$mod, RETURN, exec, kitty"
+        # Window Rules
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"
         "$mod, l, movefocus, r"
-        "$modshift, H, focuswindow, l"
-        "$modshift, J, focuswindow, d"
-        "$modshift, K, focuswindow, u"
-        "$modshift, L, focuswindow, r"
+        "$mod SHIFT, h, movewindow, l"
+        "$mod SHIFT, j, movewindow, d"
+        "$mod SHIFT, k, movewindow, u"
+        "$mod SHIFT, l, movewindow, r"
+
+        "$mod CONTROL, h, resizeactive, -20 0"
+        "$mod CONTROL, j, resizeactive, 0 20"
+        "$mod CONTROL, k, resizeactive, 0 -20"
+        "$mod CONTROL, l, resizeactive, 20 0"
+        "$mod, c, centerwindow, 1"
+
         "$mod, w, killactive"
+        "$mod, f, fullscreen, 0"
+        "$mod SHIFT, f, fakefullscreen"
+        "$mod, m, fullscreen, 1"
+        "$mod, tab, cyclenext"
+        "$mod SHIFT, tab, cyclenext, prev"
+        "$mod, s, togglefloating"
+        # Workspace rules
+        "$mod, bracketright, workspace, +1"
+        "$mod, bracketleft, workspace, -1"
       ] ++ (
         # workspaces
         # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
@@ -26,7 +51,7 @@
             ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
           in [
             "$mod, ${ws}, workspace, ${toString (x + 1)}"
-            "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)} silent"
           ]) 10));
     };
   };
