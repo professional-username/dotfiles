@@ -22,6 +22,7 @@
       # Check about:config for options.
       settings = {
         # "browser.startup.homepage" = "https://duckduckgo.com";
+        "layout.css.devPixelsPerPx" = 1.0;
         "browser.search.defaultenginename" = "DuckDuckGo";
         "browser.search.order.1" = "DuckDuckGo";
 

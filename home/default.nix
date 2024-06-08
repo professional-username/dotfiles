@@ -8,6 +8,7 @@
     ./lvim
     ./git.nix
     ./firefox
+    ./hyprland
   ];
 
   home = {

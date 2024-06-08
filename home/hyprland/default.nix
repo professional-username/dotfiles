@@ -8,14 +8,15 @@
       "$mod" = "SUPER";
       bind = [
         "$mod, F, exec, firefox"
-        "$mod, h, focuswindow, l"
-        "$mod, j, focuswindow, d"
-        "$mod, k, focuswindow, u"
-        "$mod, l, focuswindow, r"
-        "$mod, H, movewindow, l"
-        "$mod, J, movewindow, d"
-        "$mod, K, movewindow, u"
-        "$mod, L, movewindow, r"
+        "$mod, RETURN, exec, kitty"
+        "$mod, h, movefocus, l"
+        "$mod, j, movefocus, d"
+        "$mod, k, movefocus, u"
+        "$mod, l, movefocus, r"
+        "$modshift, H, focuswindow, l"
+        "$modshift, J, focuswindow, d"
+        "$modshift, K, focuswindow, u"
+        "$modshift, L, focuswindow, r"
         "$mod, w, killactive"
       ] ++ (
         # workspaces
