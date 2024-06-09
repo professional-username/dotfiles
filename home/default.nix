@@ -9,6 +9,7 @@
     ./git.nix
     ./firefox
     ./hyprland
+    ./terminal
   ];
 
   home = {

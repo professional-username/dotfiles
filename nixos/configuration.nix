@@ -109,6 +109,9 @@
     ];
   };
 
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
