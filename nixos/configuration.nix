@@ -14,6 +14,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Colours
+  stylix.image =
+    /home/username/Pictures/wallpapers/wallpaper-nimona-villain.jpg;
+  stylix.polarity = "dark";
+
   networking.hostName = "gpteapot"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -97,11 +102,11 @@
     isNormalUser = true;
     description = "username";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs;
-      [
-        kate
-        #  thunderbird
-      ];
+    packages = with pkgs; [
+      kate
+      swww
+      #  thunderbird
+    ];
   };
 
   # Allow unfree packages

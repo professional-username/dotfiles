@@ -4,6 +4,8 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Stylix
+    stylix.url = "github:danth/stylix";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
@@ -15,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
     let inherit (self) outputs;
     in {
       # NixOS configuration entrypoint
@@ -26,6 +28,9 @@
           modules = [
             # System-level configuration
             ./nixos/configuration.nix
+
+            # Stylix
+            stylix.nixosModules.stylix
 
             home-manager.nixosModules.home-manager
             {
