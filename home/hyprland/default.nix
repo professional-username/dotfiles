@@ -5,6 +5,20 @@
     enable = true;
 
     settings = {
+      monitor = [ "DP-1,3840x2160@120,0x0,2" ];
+      general = {
+        # Borders etc
+        border_size = 5;
+        gaps_in = 25;
+        gaps_out = "50,50,50,50";
+      };
+      # Decoration
+      decoration = {
+        rounding = 10;
+        inactive_opacity = 0.9;
+        blur.size = 20;
+      };
+
       input = {
         kb_options = "caps:escape";
         touchpad.natural_scroll = true;
