@@ -21,6 +21,8 @@
     #  wget
   ];
 
+  home-manager.backupFileExtension = "hmBackup";
+
   # List services that you want to enable:
 
   # Enable CUPS to print documents.

@@ -10,6 +10,7 @@
         touchpad.natural_scroll = true;
       };
       "$mod" = "SUPER";
+      exec-once = [ "swww-daemon" ];
       # Mouse Binds
       bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
       # Keybinds

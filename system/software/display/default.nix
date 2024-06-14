@@ -8,8 +8,8 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.wayland.enable = true;
 
   # Set the sddm theme
@@ -25,6 +25,9 @@
     # Whether to enable XWayland
     xwayland.enable = true;
   };
+
+  # Enable animated wallpapers
+  environment.systemPackages = with pkgs; [ swww ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
