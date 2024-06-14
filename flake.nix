@@ -27,7 +27,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             # System-level configuration
-            ./nixos/configuration.nix
+            ./system/configuration.nix
 
             # Stylix
             stylix.nixosModules.stylix
