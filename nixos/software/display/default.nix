@@ -12,6 +12,9 @@
   services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.displayManager.sddm.wayland.enable = true;
 
+  # Set the sddm theme
+  services.displayManager.sddm.theme = toString ./sugar-dark;
+
   # services.xserver.displayManager.sessionPackages =
   #   [ pkgs.libsForQt5.plasma5.plasma-workspace ];
 
