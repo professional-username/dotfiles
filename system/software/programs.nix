@@ -1,6 +1,11 @@
-{ config, pkgs, ... }:
-
-{
+{ inputs, config, pkgs, ... }:
+let
+  neovimconfig = import ../nvim;
+  nvim = inputs.nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
+    inherit pkgs;
+    module = neovimconfig;
+  };
+in {
   imports = [ ];
 
   # Allow unfree packages
@@ -15,7 +20,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
-    neovim
+    nvim
     kitty
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
