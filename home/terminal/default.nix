@@ -1,8 +1,8 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    # Emulator
+    # Various config files
     ./kitty.nix
-    # Shell
     ./fish.nix
+    ./git.nix
   ];
 }

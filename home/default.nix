@@ -7,7 +7,6 @@
     # inputs.nix-colors.homeManagerModule
     ./lvim
     ./nvim
-    ./git.nix
     ./firefox
     ./hyprland
     ./terminal
