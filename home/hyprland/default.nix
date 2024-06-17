@@ -42,10 +42,10 @@
         "$mod SHIFT, k, movewindow, u"
         "$mod SHIFT, l, movewindow, r"
 
-        "$mod CONTROL, h, resizeactive, -20 0"
-        "$mod CONTROL, j, resizeactive, 0 20"
-        "$mod CONTROL, k, resizeactive, 0 -20"
-        "$mod CONTROL, l, resizeactive, 20 0"
+        "$mod CONTROL, h, resizeactive, -50 0"
+        "$mod CONTROL, j, resizeactive, 0 50"
+        "$mod CONTROL, k, resizeactive, 0 -50"
+        "$mod CONTROL, l, resizeactive, 50 0"
         "$mod, c, centerwindow, 1"
 
         "$mod, w, killactive"
