@@ -4,6 +4,9 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # TODO Temporary fix until PR merged (https://nixpk.gs/pr-tracker.html?pr=319882)
+    nixpkgs-fixes.url =
+      "github:NixOS/nixpkgs/91a7822b04fe5e15f1604f9ca0fb81eff61b4143";
     # Stylix
     stylix.url = "github:danth/stylix";
 

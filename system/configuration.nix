@@ -1,7 +1,17 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [ ./hardware ./software ./localization ];
+
+  # TODO Temporary overlay until PR merged (https://nixpk.gs/pr-tracker.html?pr=319882)
+  nixpkgs.overlays = [
+    (final: prev: {
+      nodePackages = prev.nodePackages // {
+        inherit (inputs.nixpkgs-fixes.legacyPackages.${prev.system}.nodePackages)
+          bash-language-server;
+      };
+    })
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
