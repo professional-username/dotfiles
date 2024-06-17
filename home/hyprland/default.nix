@@ -58,6 +58,8 @@
         # Workspace rules
         "$mod, bracketright, workspace, +1"
         "$mod, bracketleft, workspace, -1"
+        "$mod, SPACE, togglespecialworkspace"
+        "$mod SHIFT, SPACE, movetoworkspace, special"
       ] ++ (
         # workspaces
         # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
