@@ -9,7 +9,6 @@
     ./firefox
     ./hyprland
     ./terminal
-    ./vscode
     ./devenv
   ];
 
