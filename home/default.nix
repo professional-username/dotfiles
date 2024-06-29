@@ -10,6 +10,7 @@
     ./hyprland
     ./terminal
     ./vscode
+    ./devenv
   ];
 
   home = {
