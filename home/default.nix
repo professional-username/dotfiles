@@ -9,6 +9,7 @@
     ./firefox
     ./hyprland
     ./terminal
+    ./vscode
   ];
 
   home = {
