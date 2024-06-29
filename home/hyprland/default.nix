@@ -24,6 +24,7 @@
         touchpad.natural_scroll = true;
       };
       "$mod" = "SUPER";
+      "$GUI_EDITOR" = "code";
       exec-once = [ "swww-daemon" ];
       # Mouse Binds
       bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
@@ -32,6 +33,7 @@
         # Program rules
         "$mod, N, exec, firefox"
         "$mod, RETURN, exec, kitty"
+        "$mod SHIFT, E, exec, $GUI_EDITOR"
         # Window Rules
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
