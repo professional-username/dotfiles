@@ -9,6 +9,7 @@
     ./firefox
     ./hyprland
     ./terminal
+    ./ags
   ];
 
   home = {

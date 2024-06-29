@@ -1,0 +1,55 @@
+/* .workspace_button { */
+/*   color: #0ff; */
+/*   background-color: #0ff; */
+/* } */
+
+.workspace_button > .active_true {
+  color: @view_fg_color;
+  /* background-color: #ff0; */
+}
+
+.workspace_button > .active_false {
+  color: darken(@view_fg_color, 50%);
+  /* background-color: #f00; */
+}
+
+/* window.bar { */
+/*     background-color: @theme_bg_color; */
+/*     color: @theme_fg_color; */
+/* } */
+
+/* button { */
+/*     min-width: 0; */
+/*     padding-top: 0; */
+/*     padding-bottom: 0; */
+/*     background-color: transparent; */
+/* } */
+
+/* button:active { */
+/*     background-color: @theme_selected_bg_color; */
+/* } */
+
+/* button:hover { */
+/*     border-bottom: 3px solid @theme_fg_color; */
+/* } */
+
+/* label { */
+/*     font-weight: bold; */
+/* } */
+
+/* .workspaces button.focused { */
+/*     border-bottom: 3px solid @theme_selected_bg_color; */
+/* } */
+
+/* .client-title { */
+/*     color: @theme_selected_bg_color; */
+/* } */
+
+/* .notification { */
+/*     color: yellow; */
+/* } */
+
+/* levelbar block, */
+/* highlight { */
+/*     min-height: 10px; */
+/* } */

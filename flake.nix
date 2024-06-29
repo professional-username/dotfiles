@@ -15,6 +15,8 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # AGS for widgets
+    ags.url = "github:Aylur/ags";
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
