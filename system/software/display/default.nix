@@ -12,8 +12,11 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.wayland.enable = true;
 
+  # Install the rose-pine sddm theme
+  environment.systemPackages = with pkgs;
+    [ (callPackage ./sddm-rose-pine.nix { }) ];
   # Set the sddm theme
-  services.displayManager.sddm.theme = toString ./sugar-dark;
+  services.displayManager.sddm.theme = "rose-pine";
 
   # services.xserver.displayManager.sessionPackages =
   #   [ pkgs.libsForQt5.plasma5.plasma-workspace ];
