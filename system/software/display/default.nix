@@ -3,6 +3,11 @@
 {
   imports = [ ];
 
+  environment.systemPackages = with pkgs; [
+    (callPackage ./sddm-rose-pine.nix { }) # Install the rose-pine sddm theme
+    swww # Enable animated wallpapers
+  ];
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
@@ -12,9 +17,6 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.wayland.enable = true;
 
-  # Install the rose-pine sddm theme
-  environment.systemPackages = with pkgs;
-    [ (callPackage ./sddm-rose-pine.nix { }) ];
   # Set the sddm theme
   services.displayManager.sddm.theme = "rose-pine";
 
@@ -28,9 +30,6 @@
     # Whether to enable XWayland
     xwayland.enable = true;
   };
-
-  # Enable animated wallpapers
-  environment.systemPackages = with pkgs; [ swww ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
