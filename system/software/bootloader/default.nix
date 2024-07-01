@@ -16,4 +16,6 @@
     useOSProber = true;
     theme = ./grub-theme;
   };
+
+  time.hardwareClockInLocalTime = true;
 }
