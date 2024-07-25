@@ -279,7 +279,28 @@
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "sddm-sugar-candy-nix": "sddm-sugar-candy-nix",
         "stylix": "stylix"
+      }
+    },
+    "sddm-sugar-candy-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1717241028,
+        "narHash": "sha256-GO96asMkQ1hQGBJWyxkbM9cplypqXY2Wb5TpKRMfxiE=",
+        "owner": "Zhaith-Izaliel",
+        "repo": "sddm-sugar-candy-nix",
+        "rev": "b410c02eb404db9456cce766bd3ff7944a86ccb2",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "Zhaith-Izaliel",
+        "repo": "sddm-sugar-candy-nix",
+        "type": "gitlab"
       }
     },
     "stylix": {

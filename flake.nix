@@ -15,9 +15,17 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Sddm theme
+    sddm-sugar-candy-nix = {
+      url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
+      # Optional, by default this flake follows nixpkgs-unstable.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
+  outputs =
+    { self, nixpkgs, home-manager, stylix, sddm-sugar-candy-nix, ... }@inputs:
     let inherit (self) outputs;
     in {
       # NixOS configuration entrypoint
@@ -28,6 +36,7 @@
           modules = [
             # System-level configuration
             ./system/configuration.nix
+            sddm-sugar-candy-nix.nixosModules.default
 
             # Stylix
             stylix.nixosModules.stylix
