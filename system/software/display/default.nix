@@ -16,6 +16,11 @@
   # services.xserver.desktopManager.plasma6.enable = true;
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.wayland.enable = true;
+  services.xserver.displayManager.sddm.settings = {
+    X11 = {
+      ServerArguments = "-dpi 192"; # Adjust this value as needed
+    };
+  };
 
   # Set the sddm theme
   services.displayManager.sddm.theme = "rose-pine";
