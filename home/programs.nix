@@ -1,7 +1,11 @@
 { inputs, lib, config, pkgs, ... }: {
-  home.packages = with pkgs; [ nvim fira-code-nerdfont ];
 
   # Enable home-manager self-management
   programs.home-manager.enable = true;
 
+  home.packages = with pkgs; [
+    # Some useful cli programs
+    nvim
+    renameutils
+  ];
 }
