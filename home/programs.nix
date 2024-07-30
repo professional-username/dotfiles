@@ -7,5 +7,6 @@
     # Some useful cli programs
     nvim
     renameutils
+    bottom
   ];
 }
