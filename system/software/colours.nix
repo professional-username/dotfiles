@@ -1,10 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, defaultWallpaper, ... }:
 
 {
   # Colours
   stylix.enable = true;
-  stylix.image =
-    /home/username/Pictures/wallpapers/wallpaper-nimona-villain.jpg;
+  stylix.image = defaultWallpaper;
   stylix.polarity = "dark";
 
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";

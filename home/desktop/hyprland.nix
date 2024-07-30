@@ -1,6 +1,8 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [ ];
 
+  stylix.targets.hyprland.enable = false;
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -25,7 +27,8 @@
       };
       "$mod" = "SUPER";
       "$GUI_EDITOR" = "code";
-      exec-once = [ "swww-daemon" ];
+      exec-once =
+        [ "swww-daemon" "systemctl --user start set-wallpaper" "swww restore" ];
       # Mouse Binds
       bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
       # Keybinds
@@ -72,6 +75,11 @@
             "$mod, ${ws}, workspace, ${toString (x + 1)}"
             "$mod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
           ]) 10));
+      # Miscallaneous settings
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+      };
     };
   };
 }

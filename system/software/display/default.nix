@@ -3,11 +3,6 @@
 {
   imports = [ ./sddm.nix ];
 
-  environment.systemPackages = with pkgs;
-    [
-      swww # Enable animated wallpapers
-    ];
-
   # Enable hyprland
   programs.hyprland = {
     # Install the packages from nixpkgs

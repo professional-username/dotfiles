@@ -7,7 +7,7 @@
     # inputs.nix-colors.homeManagerModule
     ./lvim
     ./firefox
-    ./hyprland
+    ./desktop
     ./terminal
     ./devenv
   ];
