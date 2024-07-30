@@ -6,5 +6,6 @@
     ./bootloader
     ./colours.nix
     ./settings.nix
+    ./fonts.nix
   ];
 }

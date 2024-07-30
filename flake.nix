@@ -26,13 +26,15 @@
 
   outputs =
     { self, nixpkgs, home-manager, stylix, sddm-sugar-candy-nix, ... }@inputs:
-    let inherit (self) outputs;
+    let
+      inherit (self) outputs;
+      defaultWallpaper = ./images/wallpaper_default.jpg;
     in {
       # NixOS configuration entrypoint
       nixosConfigurations = {
         # Config for gpteapot system
         gpteapot = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs outputs defaultWallpaper; };
           modules = [
             # System-level configuration
             ./system/configuration.nix
@@ -43,6 +45,7 @@
 
             home-manager.nixosModules.home-manager
             {
+              # Home manager modules
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
