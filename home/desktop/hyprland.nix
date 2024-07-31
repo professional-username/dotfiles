@@ -27,8 +27,10 @@
       };
       "$mod" = "SUPER";
       "$GUI_EDITOR" = "code";
-      exec-once =
-        [ "swww-daemon" "systemctl --user start set-wallpaper" "swww restore" ];
+      exec-once = [
+        "systemctl --user start swww"
+        "systemctl --user start set-wallpaper"
+      ];
       # Mouse Binds
       bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
       # Keybinds
