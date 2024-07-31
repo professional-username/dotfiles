@@ -14,7 +14,7 @@ let
     fi
 
     ${pkgs.swww}/bin/swww restore
-    ${pkgs.swww}/bin/swww img "$WALLPAPER"
+    ${pkgs.swww}/bin/swww img "$WALLPAPER" -t center
   '';
 in {
   home.packages = [ pkgs.swww setWallpaperScript ];
