@@ -1,4 +1,14 @@
-const hyprland = await Service.import("hyprland")
+// main scss file
+const scss = `${App.configDir}/sass/style.scss`
+
+// target css file
+const css = `/tmp/my-style.css`
+
+// make sure sassc is installed on your system
+Utils.exec(`sassc ${scss} ${css}`)
+
+
+const hyprland = await Service.import("hyprland");
 
 // --- Widgets ---
 
@@ -38,6 +48,7 @@ function barLeft() {
 }
 function barCenter() {
   return Widget.Box({
+    class_name: "centerText",
     spacing: 8,
     children: [Widget.Label("center")],
   })
@@ -66,7 +77,7 @@ function Bar(monitor = 0) {
 }
 
 App.config({
-  style: "./style.css",
+  style: css,
   windows: [
     Bar(),
   ],

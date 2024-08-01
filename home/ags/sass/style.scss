@@ -1,0 +1,11 @@
+@import "/home/username/.config/stylix-colors/colors.scss";
+
+
+
+.workspace_button>.active_true {
+  color: $base13;
+}
+
+.workspace_button>.active_false {
+  color: $base10;
+}
