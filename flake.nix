@@ -21,7 +21,8 @@
       # Optional, by default this flake follows nixpkgs-unstable.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    # AGS for widgets
+    ags.url = "github:Aylur/ags";
   };
 
   outputs =

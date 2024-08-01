@@ -1,0 +1,35 @@
+@import "/home/username/.config/stylix-colors/colors.scss";
+
+// Bar placement etc.
+.bar {
+  background-color: transparent;
+  font-family: "FiraCode Nerd Font";
+}
+
+.bar__body {
+  border: 0.15em solid $base0D;
+  margin: 0 1em 0.5em 1em;
+  padding: 0.25em 1em;
+  border-radius: 1em;
+  background-color: $base00;
+}
+
+
+// Workspaces
+.ws__button {
+  background-color: transparent;
+  padding: 0px 0.4em;
+}
+
+.ws__button--active .ws__label {
+  color: $base05;
+}
+
+.ws__button--inactive .ws__label {
+  color: $base03;
+}
+
+// Clock
+.clock {
+  font-size: 0.8em;
+}

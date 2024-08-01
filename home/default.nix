@@ -10,6 +10,7 @@
     ./desktop
     ./terminal
     ./devenv
+    ./ags
   ];
 
   home = {
