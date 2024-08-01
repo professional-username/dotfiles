@@ -20,18 +20,29 @@ function workspaces() {
   const active_id = hyprland.active.workspace.bind("id");
   // The button widgets
   const workspaceButtons = Array.from({ length: 10 }, (_, index) => Widget.Button({
-    class_names: [`id_${index + 1}`, "workspace_button"],
+    class_names: active_id.as(id => [
+      "ws__button",
+      `ws__button--id-${index + 1}`,
+      `ws__button--${id === index + 1 ? "active" : "inactive"}`
+    ]),
+    // attribute: index + 1,
+
     on_clicked: () => { hyprland.messageAsync(`dispatch workspace ${index + 1}`) },
-    // The button labels
     child: Widget.Label({
-      class_name: active_id.as(id => `active_${id == index + 1}`),
-      label: "•",
+      class_name: "ws__label",
+      label: "",
+      // Change the label based on whether the workspace exists / is occupied
+      setup: self => self.hook(hyprland, () => {
+        self.label = hyprland.workspaces.some(ws => ws.id === index + 1)
+          ? "" : ""
+      }),
     })
   }));
 
   return Widget.Box({
     class_name: "workspaces",
     children: workspaceButtons,
+
   });
 }
 
