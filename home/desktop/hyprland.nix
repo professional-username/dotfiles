@@ -28,6 +28,7 @@
       "$mod" = "SUPER";
       "$GUI_EDITOR" = "code";
       exec-once = [
+        "ags"
         "systemctl --user start swww"
         "systemctl --user start set-wallpaper"
       ];
