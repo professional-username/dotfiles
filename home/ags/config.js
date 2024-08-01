@@ -17,15 +17,14 @@ function nixMenu() {
 }
 
 function workspaces() {
+  // Generate a row of button widgets that respond to hprland's workspaces
   const active_id = hyprland.active.workspace.bind("id");
-  // The button widgets
   const workspaceButtons = Array.from({ length: 10 }, (_, index) => Widget.Button({
     class_names: active_id.as(id => [
       "ws__button",
       `ws__button--id-${index + 1}`,
       `ws__button--${id === index + 1 ? "active" : "inactive"}`
     ]),
-    // attribute: index + 1,
 
     on_clicked: () => { hyprland.messageAsync(`dispatch workspace ${index + 1}`) },
     child: Widget.Label({
@@ -40,16 +39,24 @@ function workspaces() {
   }));
 
   return Widget.Box({
-    class_name: "workspaces",
+    class_name: "ws",
     children: workspaceButtons,
-
   });
+}
+
+function Clock() {
+  return Widget.Label({
+    class_name: "clock",
+    label: date.bind(),
+  })
 }
 
 // --- Positioning ---
 
 function barLeft() {
   return Widget.Box({
+    class_name: "bar__left",
+    hpack: "start",
     spacing: 8,
     children: [
       nixMenu(),
@@ -57,28 +64,41 @@ function barLeft() {
     ],
   })
 }
+
+
+const date = Variable("", {
+  poll: [1000, 'date "+%H:%M"'],
+})
+
 function barCenter() {
   return Widget.Box({
-    class_name: "centerText",
+    class_name: "bar__center",
+    hpack: "center",
     spacing: 8,
-    children: [Widget.Label("center")],
+    children: [Widget.Label("")],
   })
 }
 
 function barRight() {
   return Widget.Box({
+    class_name: "bar__right",
+    hpack: "end",
     spacing: 8,
-    children: [Widget.Label("right")],
+    children: [
+      Clock(),
+    ],
   })
 }
 
 function Bar(monitor = 0) {
   return Widget.Window({
+    class_name: "bar",
     monitor,
     name: `bar${monitor}`, // this name has to be unique
     anchor: ['bottom', 'left', 'right'],
     exclusivity: "exclusive",
     child: Widget.CenterBox({
+      class_name: "bar__body",
       spacing: 8,
       start_widget: barLeft(),
       center_widget: barCenter(),
