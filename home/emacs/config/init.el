@@ -1,17 +1,24 @@
-;; Load core settings
+;; Initialize package sources
+(require 'package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Initialize use-package
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+
+;; Load settings
 (load (expand-file-name "core.el" user-emacs-directory))
-
-;; Load UI settings
 (load (expand-file-name "ui.el" user-emacs-directory))
-
-;; Load keybindings
 (load (expand-file-name "keybindings.el" user-emacs-directory))
-
-;; Load development settings
 (load (expand-file-name "development.el" user-emacs-directory))
-
-;; Load Org mode settings
-(load (expand-file-name "org.el" user-emacs-directory))
-
-;; Load tools settings
 (load (expand-file-name "tools.el" user-emacs-directory))

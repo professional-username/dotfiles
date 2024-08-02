@@ -4,6 +4,9 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs;
+    extraConfig = ''
+      (setenv "XDG_CONFIG_HOME" (expand-file-name "~/.config"))
+    '';
   };
 
   home.file = {
@@ -13,7 +16,6 @@
     ".config/emacs/ui.el".source = ./config/ui.el;
     ".config/emacs/keybindings.el".source = ./config/keybindings.el;
     ".config/emacs/development.el".source = ./config/development.el;
-    ".config/emacs/org.el".source = ./config/org.el;
     ".config/emacs/tools.el".source = ./config/tools.el;
   };
 }
