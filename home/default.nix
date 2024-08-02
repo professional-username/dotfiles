@@ -11,6 +11,7 @@
     ./terminal
     ./devenv
     ./programs.nix
+    ./emacs
   ];
 
   home = {
