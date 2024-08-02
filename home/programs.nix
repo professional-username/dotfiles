@@ -5,7 +5,7 @@
 
   home.packages = with pkgs; [
     # Some useful cli programs
-    nvim
+    neovim
     renameutils
     bottom
   ];
