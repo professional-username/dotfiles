@@ -3,7 +3,7 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs;
+    package = pkgs.emacs29-pgtk;
     extraConfig = ''
       (setenv "XDG_CONFIG_HOME" (expand-file-name "~/.config"))
     '';
