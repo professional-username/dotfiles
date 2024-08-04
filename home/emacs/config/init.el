@@ -1,3 +1,6 @@
+;; Scaling
+(setq x-gtk-use-system-tooltips nil)
+
 ;; Initialize package sources
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")

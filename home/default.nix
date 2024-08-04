@@ -12,6 +12,7 @@
     ./devenv
     ./programs.nix
     ./emacs
+    ./ui
   ];
 
   home = {
