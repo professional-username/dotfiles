@@ -9,7 +9,7 @@
     ./firefox
     ./desktop
     ./terminal
-    ./devenv
+    ./development
     ./programs.nix
     ./emacs
     ./ui
