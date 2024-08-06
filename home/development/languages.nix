@@ -21,5 +21,14 @@
     nodePackages.stylelint # CSS/SCSS linter
     nodePackages.graphql-language-service-cli
     nodePackages.vls # Vite / Vite
+
+    # Code formatters
+    black # Python formatter
+    isort # Python import sorter
+    stylua # Lua formatter
+    nixpkgs-fmt # Nix formatter
+    rustfmt # Rust formatter
+    gofumpt # Go formatter
+    shfmt # Shell script formatter
   ];
 }
