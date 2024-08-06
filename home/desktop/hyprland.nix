@@ -26,7 +26,7 @@
         touchpad.natural_scroll = true;
       };
       "$mod" = "SUPER";
-      "$GUI_EDITOR" = "code";
+      "$GUI_EDITOR" = "emacs";
       exec-once = [
         "ags"
         "systemctl --user start swww"
