@@ -8,5 +8,6 @@
     neovim
     renameutils
     bottom
+    tree
   ];
 }
