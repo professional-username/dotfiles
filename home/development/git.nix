@@ -3,7 +3,7 @@
   programs.git = {
     enable = true;
 
-    userEmail = "jv7edi9r@anonaddy.me";
-    userName = "mirrored-basilisk";
+    userEmail = "9hacahn5@anonaddy.me";
+    userName = "professional-username";
   };
 }

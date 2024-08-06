@@ -1,1 +1,1 @@
-{ inputs, lib, config, pkgs, ... }: { imports = [ ./devenv.nix ]; }
+{ inputs, lib, config, pkgs, ... }: { imports = [ ./devenv.nix ./git.nix ]; }

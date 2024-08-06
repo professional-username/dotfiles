@@ -3,6 +3,5 @@
     # Various config files
     ./kitty.nix
     ./fish.nix
-    ./git.nix
   ];
 }
