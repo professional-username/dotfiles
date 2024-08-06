@@ -3,5 +3,6 @@
     # Various config files
     ./kitty.nix
     ./fish.nix
+    ./rbw.nix
   ];
 }
