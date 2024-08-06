@@ -4,7 +4,7 @@
     with epkgs; [
       # Essential packages
       evil # Vim emulation layer
-      vertico # Vertical completion UI
+      ivy # Vertical completion UI
       orderless # Flexible completion style
       consult # Search and navigation commands
       embark # Context-aware action menu
@@ -17,6 +17,7 @@
       treemacs # Tree-style file explorer sidebar
       doom-themes # Theme collection
       general # Key binding management
+      apheleia # Formatting
 
       # Additional useful packages
       which-key # Displays available keybindings
