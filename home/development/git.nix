@@ -5,5 +5,7 @@
 
     userEmail = "9hacahn5@anonaddy.me";
     userName = "professional-username";
+
+    extraConfig = { init.defaultBranch = "main"; };
   };
 }
