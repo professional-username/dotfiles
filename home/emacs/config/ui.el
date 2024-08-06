@@ -18,6 +18,7 @@
                 eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
+
 (use-package doom-themes
   :config
   (load-theme 'doom-one t))
@@ -75,4 +76,10 @@
        (treemacs-git-mode 'deferred))
       (`(t . _)
        (treemacs-git-mode 'simple)))))
+
+;; Transparent background
+(add-hook 'after-init-hook
+          (lambda ()
+            (set-frame-parameter nil 'alpha-background 85)
+            (add-to-list 'default-frame-alist '(alpha-background . 85))))
 
