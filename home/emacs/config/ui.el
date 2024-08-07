@@ -18,13 +18,13 @@
                 eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-
-(use-package doom-themes
-  :config
-  (load-theme 'doom-one t))
-
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package treemacs-nerd-icons
+  :config
+  (treemacs-load-theme "nerd-icons"))
+
 
 (use-package treemacs
   :defer t
@@ -77,13 +77,78 @@
       (`(t . _)
        (treemacs-git-mode 'simple)))))
 
-(use-package treemacs-nerd-icons
-  :config
-  (treemacs-load-theme "nerd-icons"))
-
 ;; Transparent background
 (add-hook 'after-init-hook
           (lambda ()
             (set-frame-parameter nil 'alpha-background 85)
             (add-to-list 'default-frame-alist '(alpha-background . 85))))
 
+;; Nerd icon colors
+(defun utils/set-nerd-icons-colors ()
+  "Set nerd-icons colors based on the stylix base16 theme."
+  (when (bound-and-true-p base16-stylix-theme-colors)
+    (let ((base00 (plist-get base16-stylix-theme-colors :base00))
+          (base01 (plist-get base16-stylix-theme-colors :base01))
+          (base02 (plist-get base16-stylix-theme-colors :base02))
+          (base03 (plist-get base16-stylix-theme-colors :base03))
+          (base04 (plist-get base16-stylix-theme-colors :base04))
+          (base05 (plist-get base16-stylix-theme-colors :base05))
+          (base06 (plist-get base16-stylix-theme-colors :base06))
+          (base07 (plist-get base16-stylix-theme-colors :base07))
+          (base08 (plist-get base16-stylix-theme-colors :base08))
+          (base09 (plist-get base16-stylix-theme-colors :base09))
+          (base0A (plist-get base16-stylix-theme-colors :base0A))
+          (base0B (plist-get base16-stylix-theme-colors :base0B))
+          (base0C (plist-get base16-stylix-theme-colors :base0C))
+          (base0D (plist-get base16-stylix-theme-colors :base0D))
+          (base0E (plist-get base16-stylix-theme-colors :base0E))
+          (base0F (plist-get base16-stylix-theme-colors :base0F)))
+
+      ;; Note: colors are not perfect, but at least they are consistent
+      ;; Could use some improvement with e.g. darken / lighten functions
+      (set-face-foreground 'nerd-icons-dsilver base04)
+      (set-face-foreground 'nerd-icons-silver base05)
+      (set-face-foreground 'nerd-icons-lsilver base06)
+
+      (set-face-foreground 'nerd-icons-dgreen base0B)
+      (set-face-foreground 'nerd-icons-green base0B)
+      (set-face-foreground 'nerd-icons-lgreen base0B)
+    
+      (set-face-foreground 'nerd-icons-dblue base0B)
+      (set-face-foreground 'nerd-icons-blue base0B)
+      (set-face-foreground 'nerd-icons-lblue base0B)
+      (set-face-foreground 'nerd-icons-blue-alt base0B)
+
+      (set-face-foreground 'nerd-icons-dmaroon base0A)
+      (set-face-foreground 'nerd-icons-maroon base0A)
+      (set-face-foreground 'nerd-icons-lmaroon base0A)
+
+      (set-face-foreground 'nerd-icons-dpurple base0D)
+      (set-face-foreground 'nerd-icons-purple base0D)
+      (set-face-foreground 'nerd-icons-lpurple base0D)
+      (set-face-foreground 'nerd-icons-purple-alt base0D)
+
+      (set-face-foreground 'nerd-icons-dorange base09)
+      (set-face-foreground 'nerd-icons-orange base09)
+      (set-face-foreground 'nerd-icons-lorange base09)
+
+      (set-face-foreground 'nerd-icons-cyan base0C)
+      (set-face-foreground 'nerd-icons-dcyan base0C)
+      (set-face-foreground 'nerd-icons-lcyan base0C)
+      (set-face-foreground 'nerd-icons-cyan-alt base0C)
+
+      (set-face-foreground 'nerd-icons-yellow base0E)
+      (set-face-foreground 'nerd-icons-dyellow base0E)
+      (set-face-foreground 'nerd-icons-lyellow base0E)
+
+      (set-face-foreground 'nerd-icons-dred base08)
+      (set-face-foreground 'nerd-icons-red base08)
+      (set-face-foreground 'nerd-icons-lred base08)
+      (set-face-foreground 'nerd-icons-red-alt base08)
+
+      (set-face-foreground 'nerd-icons-dpink base0A)
+      (set-face-foreground 'nerd-icons-pink base0A)
+      (set-face-foreground 'nerd-icons-lpink base0A)
+      )))
+
+(add-hook 'after-init-hook 'utils/set-nerd-icons-colors)
