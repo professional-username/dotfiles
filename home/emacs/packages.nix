@@ -15,6 +15,8 @@
       flycheck # On-the-fly syntax checking
       company # Text completion framework
       treemacs # Tree-style file explorer sidebar
+      treemacs-projectile # Treemacs projectile integration
+      treemacs-nerd-icons
       doom-themes # Theme collection
       general # Key binding management
       apheleia # Formatting

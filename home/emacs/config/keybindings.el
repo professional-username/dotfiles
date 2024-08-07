@@ -12,6 +12,7 @@
     "p"  '(:ignore t :which-key "project")
     "pf" '(projectile-find-file :which-key "find file in project")
     "ps" '(projectile-switch-project :which-key "switch project")
+    "e"  '(treemacs :which-key "toggle treemacs")
     "b"  '(:ignore t :which-key "buffer")
     "bb" '(switch-to-buffer :which-key "switch buffer")
     "bk" '(kill-buffer :which-key "kill buffer")

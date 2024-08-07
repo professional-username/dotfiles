@@ -77,6 +77,10 @@
       (`(t . _)
        (treemacs-git-mode 'simple)))))
 
+(use-package treemacs-nerd-icons
+  :config
+  (treemacs-load-theme "nerd-icons"))
+
 ;; Transparent background
 (add-hook 'after-init-hook
           (lambda ()
