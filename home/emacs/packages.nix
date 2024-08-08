@@ -21,6 +21,10 @@
       general # Key binding management
       apheleia # Formatting
 
+      # Better terminal
+      vterm
+      vterm-toggle
+
       # Additional useful packages
       which-key # Displays available keybindings
       helpful # Improved help system

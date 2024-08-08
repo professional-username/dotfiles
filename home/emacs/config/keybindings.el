@@ -1,3 +1,4 @@
+;; Keybindings
 (use-package general
   :config
   (general-create-definer my-leader-def
@@ -16,6 +17,7 @@
     "b"  '(:ignore t :which-key "buffer")
     "bb" '(switch-to-buffer :which-key "switch buffer")
     "bk" '(kill-buffer :which-key "kill buffer")
+    "t"  '(vterm-toggle :which-key "Toggle vterm")
     "w"  '(:ignore t :which-key "window")
     "wl" '(windmove-right :which-key "move right")
     "wh" '(windmove-left :which-key "move left")
@@ -24,4 +26,3 @@
     "w/" '(split-window-right :which-key "split right")
     "w-" '(split-window-below :which-key "split below")
     "wd" '(delete-window :which-key "delete window")))
-

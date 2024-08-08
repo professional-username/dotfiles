@@ -65,3 +65,11 @@
 (use-package flycheck
   :init (global-flycheck-mode))
 
+(use-package vterm
+  :config
+  (setq vterm-toggle-scope 'project)
+  (define-key vterm-mode-map (kbd "C-i") 'vterm-send-next-key)
+  :custom
+  (vterm-shell "$SHELL")
+  (vterm-always-compile-module t))
+
