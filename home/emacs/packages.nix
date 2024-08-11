@@ -29,5 +29,8 @@
       which-key # Displays available keybindings
       helpful # Improved help system
       rainbow-delimiters # Colorizes nested parentheses
+
+      # Additional language support
+      nix-mode
     ];
 }
