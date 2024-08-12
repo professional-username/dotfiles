@@ -77,6 +77,11 @@
       (`(t . _)
        (treemacs-git-mode 'simple)))))
 
+;; Treemacs evil integration
+(use-package treemacs-evil
+  :after treemacs evil
+  :ensure t)
+
 ;; Transparent background
 (add-hook 'after-init-hook
           (lambda ()
@@ -113,7 +118,7 @@
       (set-face-foreground 'nerd-icons-dgreen base0B)
       (set-face-foreground 'nerd-icons-green base0B)
       (set-face-foreground 'nerd-icons-lgreen base0B)
-    
+      
       (set-face-foreground 'nerd-icons-dblue base0B)
       (set-face-foreground 'nerd-icons-blue base0B)
       (set-face-foreground 'nerd-icons-lblue base0B)
