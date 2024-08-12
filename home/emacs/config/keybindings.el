@@ -7,17 +7,22 @@
     :global-prefix "C-SPC")
 
   (my-leader-def
+    "t"  '(vterm-toggle :which-key "Toggle vterm")
+    "e"  '(treemacs :which-key "toggle treemacs")
+    ";"  '(comment-line :which-key "comment line")
+    ;; Files
     "f"  '(:ignore t :which-key "files")
     "ff" '(find-file :which-key "find file")
     "fr" '(recentf-open-files :which-key "recent files")
+    ;; Projectile
     "p"  '(:ignore t :which-key "project")
     "pf" '(projectile-find-file :which-key "find file in project")
     "ps" '(projectile-switch-project :which-key "switch project")
-    "e"  '(treemacs :which-key "toggle treemacs")
+    ;; Buffers
     "b"  '(:ignore t :which-key "buffer")
     "bb" '(switch-to-buffer :which-key "switch buffer")
     "bk" '(kill-buffer :which-key "kill buffer")
-    "t"  '(vterm-toggle :which-key "Toggle vterm")
+    ;; Window moving rules
     "w"  '(:ignore t :which-key "window")
     "wl" '(windmove-right :which-key "move right")
     "wh" '(windmove-left :which-key "move left")
@@ -25,4 +30,4 @@
     "wj" '(windmove-down :which-key "move down")
     "w/" '(split-window-right :which-key "split right")
     "w-" '(split-window-below :which-key "split below")
-    "wd" '(delete-window :which-key "delete window")))
+    "wc" '(delete-window :which-key "delete window")))
