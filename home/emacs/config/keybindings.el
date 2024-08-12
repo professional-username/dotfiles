@@ -22,6 +22,8 @@
     "b"  '(:ignore t :which-key "buffer")
     "bb" '(switch-to-buffer :which-key "switch buffer")
     "bk" '(kill-buffer :which-key "kill buffer")
+    "bh" '(previous-buffer :which-key "previous buffer")
+    "bl" '(next-buffer :which-key "next buffer")
     ;; Window moving rules
     "w"  '(:ignore t :which-key "window")
     "wl" '(windmove-right :which-key "move right")
