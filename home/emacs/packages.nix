@@ -17,6 +17,7 @@
       doom-themes # Theme collection
       general # Key binding management
       apheleia # Formatting
+      direnv # Direnv integration
 
       # Treemacs and integrations
       treemacs

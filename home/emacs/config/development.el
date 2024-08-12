@@ -17,20 +17,10 @@
         (find-file file)
       (projectile-find-file))))
 
-;; (defun utils/projectile-treemacs-switch-project-action ()
-;;   "Switch to a project, replacing the current buffer.
-;;    Opens the last visited file in the project or Dired if no file is found."
-;;   (let* ((project-root (projectile-ensure-project (projectile-project-root)))
-;;          (file (projectile-find-file-in-known-projects)))
-;;     ;; Kill the current buffer
-;;     ;; (kill-buffer (current-buffer))
-;;     ;; Open either the last visited file or Dired
-;;     (if file
-;;         (find-file file)
-;;       (dired project-root))
-;;     ;; Optionally, you can add Treemacs integration here
-;;     (when (fboundp 'treemacs-add-and-display-current-project)
-;;       (treemacs-add-and-display-current-project))))
+;; Direnv integration
+(use-package direnv
+  :config
+  (direnv-mode))
 
 (use-package projectile
   :init
