@@ -17,13 +17,13 @@
     nodePackages.typescript-language-server # TypeScript/JavaScript, includes JSX support
     nodePackages.vscode-langservers-extracted # HTML/CSS/JSON
     nodePackages.eslint # JavaScript linter
-    nodePackages.prettier # Code formatter
-    nodePackages.stylelint # CSS/SCSS linter
+    stylelint # CSS/SCSS linter
     nodePackages.graphql-language-service-cli
     nodePackages.vls # Vite / Vite
 
     # Code formatters
     black # Python formatter
+    nodePackages.prettier # Javascript / css / html etc
     isort # Python import sorter
     stylua # Lua formatter
     nixpkgs-fmt # Nix formatter
