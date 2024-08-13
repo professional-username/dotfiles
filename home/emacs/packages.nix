@@ -21,6 +21,7 @@
       eglot # LSP client
       flycheck # On-the-fly syntax checking
       flycheck-eglot
+      flycheck-inline
 
       # Treemacs and integrations
       treemacs
