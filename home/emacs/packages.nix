@@ -10,14 +10,17 @@
       embark # Context-aware action menu
       marginalia # Annotations for minibuffer completions
       magit # Git interface
-      eglot # LSP client
       projectile # Project management
-      flycheck # On-the-fly syntax checking
       company # Text completion framework
       doom-themes # Theme collection
       general # Key binding management
       apheleia # Formatting
       direnv # Direnv integration
+
+      # Syntax etc
+      eglot # LSP client
+      flycheck # On-the-fly syntax checking
+      flycheck-eglot
 
       # Treemacs and integrations
       treemacs

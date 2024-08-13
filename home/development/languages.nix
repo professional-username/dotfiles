@@ -17,9 +17,9 @@
     nodePackages.typescript-language-server # TypeScript/JavaScript, includes JSX support
     nodePackages.vscode-langservers-extracted # HTML/CSS/JSON
     nodePackages.eslint # JavaScript linter
-    stylelint # CSS/SCSS linter
     nodePackages.graphql-language-service-cli
     nodePackages.vls # Vite / Vite
+    stylelint # CSS/SCSS linter
 
     # Code formatters
     black # Python formatter

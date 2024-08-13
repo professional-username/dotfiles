@@ -43,10 +43,21 @@
   :config
   (setq eglot-autoshutdown t)
   (setq eglot-confirm-server-initiated-edits nil)
+  ;; Language-specific settings
+  ;; (add-hook 'scss-mode-hook 'eglot-ensure)
   ;; Show tooltips
   (tooltip-mode 1)
-  (setq help-at-pt-timer-delay 0.1)
-  (setq help-at-pt-display-when-idle '(flymake-diagnostic)))
+  (setq help-at-pt-timer-delay 0.1))
+
+(use-package flycheck
+  :init (global-flycheck-mode))
+
+(use-package flycheck-eglot
+  :ensure t
+  :after (flycheck eglot)
+  :config
+  ;; (setq flycheck-eglot-exclusive nil)
+  (global-flycheck-eglot-mode 1))
 
 (use-package apheleia
   :config
@@ -60,9 +71,6 @@
   :custom
   (company-minimum-prefix-length 1)
   (company-idle-delay 0.0))
-
-(use-package flycheck
-  :init (global-flycheck-mode))
 
 (use-package vterm
   :config
