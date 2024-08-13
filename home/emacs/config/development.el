@@ -25,7 +25,11 @@
   :init
   (setq projectile-project-search-path '("~/Projects/"))
   :diminish projectile-mode
-  :config (projectile-mode)
+  :config
+  (projectile-mode)
+  (setq projectile-project-run-cmd "project-run")
+  (setq projectile-project-test-cmd "project-test")
+  (setq projectile-project-compile-cmd "project-compile")
   :custom
   (projectile-completion-system 'ivy)
   (projectile-switch-project-action #'utils/projectile-switch-project-action)
