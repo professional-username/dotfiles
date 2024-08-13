@@ -46,7 +46,9 @@
 
 (use-package apheleia
   :config
-  (apheleia-global-mode +1))
+  (apheleia-global-mode +1)
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 4))
 
 (use-package company
   :after eglot
