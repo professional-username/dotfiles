@@ -18,6 +18,9 @@
     "p"  '(:ignore t :which-key "project")
     "pf" '(projectile-find-file :which-key "find file in project")
     "ps" '(projectile-switch-project :which-key "switch project")
+    "pr" '(projectile-run-project :Which-key "run project")
+    "pt" '(projectile-test-project :Which-key "test project")
+    "pc" '(projectile-compile-project :Which-key "compile project")
     ;; Buffers
     "b"  '(:ignore t :which-key "buffer")
     "bb" '(switch-to-buffer :which-key "switch buffer")
