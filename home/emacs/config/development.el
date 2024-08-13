@@ -1,6 +1,5 @@
 (use-package magit)
 
-
 ;; Projectile auto-add project to treemacs
 (defun utils/add-projectile-project-to-treemacs ()
   "Add the current Projectile project to Treemacs workspace."
