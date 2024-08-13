@@ -42,7 +42,11 @@
   :hook (prog-mode . eglot-ensure)
   :config
   (setq eglot-autoshutdown t)
-  (setq eglot-confirm-server-initiated-edits nil))
+  (setq eglot-confirm-server-initiated-edits nil)
+  ;; Show tooltips
+  (tooltip-mode 1)
+  (setq help-at-pt-timer-delay 0.1)
+  (setq help-at-pt-display-when-idle '(flymake-diagnostic)))
 
 (use-package apheleia
   :config
