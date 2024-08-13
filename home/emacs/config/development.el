@@ -43,14 +43,16 @@
   :config
   (setq eglot-autoshutdown t)
   (setq eglot-confirm-server-initiated-edits nil)
-  ;; Language-specific settings
-  ;; (add-hook 'scss-mode-hook 'eglot-ensure)
   ;; Show tooltips
   (tooltip-mode 1)
-  (setq help-at-pt-timer-delay 0.1))
+  (setq help-at-pt-timer-delay 0.1)
+  (setq help-at-pt-display-when-idle '(flymake-diagnostic flycheck-diagnostic)))
 
 (use-package flycheck
-  :init (global-flycheck-mode))
+  :config
+  (tooltip-mode 1)
+  (add-hook 'flycheck-mode-hook #'flycheck-inline-mode)
+  (add-hook 'after-init-hook #'global-flycheck-mode))
 
 (use-package flycheck-eglot
   :ensure t
