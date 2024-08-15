@@ -15,6 +15,6 @@
     '';
 
     # Font
-    # font = { };
+    font.size = lib.mkForce 10;
   };
 }
