@@ -14,6 +14,10 @@
     "f"  '(:ignore t :which-key "files")
     "ff" '(find-file :which-key "find file")
     "fr" '(recentf-open-files :which-key "recent files")
+    ;; Magit
+    "g" '(:ignore t :which-key "magit")
+    "gg" '(magit-status :which-key "magit status")
+    "gs" '(magit-stage-file :which-key "magit stage file")
     ;; Projectile
     "p"  '(:ignore t :which-key "project")
     "pf" '(projectile-find-file :which-key "find file in project")
