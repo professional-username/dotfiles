@@ -10,5 +10,6 @@
     bottom
     tree
     fzf
+    jrnl
   ];
 }

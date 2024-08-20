@@ -5,5 +5,6 @@
     ./fish.nix
     ./rbw.nix
     ./starship.nix
+    ./jrnl.nix
   ];
 }
