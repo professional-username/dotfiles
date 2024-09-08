@@ -22,7 +22,7 @@
     ;; Magit
     "g" '(:ignore t :which-key "magit")
     "gg" '(magit-status :which-key "magit status")
-    "gs" '(magit-stage-filje :which-key "magit stage file")
+    "gs" '(magit-stage-file :which-key "magit stage file")
     ;; Projectile
     "p"  '(:ignore t :which-key "project")
     "pf" '(projectile-find-file :which-key "find file in project")
