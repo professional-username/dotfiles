@@ -17,5 +17,6 @@
     ".config/emacs/keybindings.el".source = ./config/keybindings.el;
     ".config/emacs/development.el".source = ./config/development.el;
     ".config/emacs/tools.el".source = ./config/tools.el;
+    ".config/emacs/org.el".source = ./config/org.el;
   };
 }

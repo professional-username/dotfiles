@@ -14,10 +14,15 @@
     "f"  '(:ignore t :which-key "files")
     "ff" '(find-file :which-key "find file")
     "fr" '(recentf-open-files :which-key "recent files")
+    ;; Org (roam)
+    "o"  '(:ignore t :which-key "org")
+    "oc" '(org-roam-capture :which-key "org-roam capture")
+    "oi" '(org-roam-node-insert :which-key "org-roam insert node")
+    "of" '(org-roam-node-find :which-key "org-roam find node")
     ;; Magit
     "g" '(:ignore t :which-key "magit")
     "gg" '(magit-status :which-key "magit status")
-    "gs" '(magit-stage-file :which-key "magit stage file")
+    "gs" '(magit-stage-filje :which-key "magit stage file")
     ;; Projectile
     "p"  '(:ignore t :which-key "project")
     "pf" '(projectile-find-file :which-key "find file in project")

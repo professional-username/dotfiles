@@ -40,5 +40,9 @@
 
       # Additional language support
       nix-mode
+
+      # Org mode
+      org
+      org-roam
     ];
 }
