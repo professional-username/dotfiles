@@ -25,3 +25,4 @@
 (load (expand-file-name "keybindings.el" user-emacs-directory))
 (load (expand-file-name "development.el" user-emacs-directory))
 (load (expand-file-name "tools.el" user-emacs-directory))
+(load (expand-file-name "org.el" user-emacs-directory))
