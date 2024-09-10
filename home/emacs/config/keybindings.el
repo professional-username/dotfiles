@@ -16,9 +16,12 @@
     "fr" '(recentf-open-files :which-key "recent files")
     ;; Org (roam)
     "o"  '(:ignore t :which-key "org")
+    "oo" '(org-open-at-point :which-key "org follow link")
     "oc" '(org-roam-capture :which-key "org-roam capture")
     "oi" '(org-roam-node-insert :which-key "org-roam insert node")
     "of" '(org-roam-node-find :which-key "org-roam find node")
+    "ot" '(org-roam-tag-add :which-key "org-roam add tags to file")
+    "oT" '(org-roam-tag-remove :which-key "org-roam remove tags from file")
     ;; Magit
     "g" '(:ignore t :which-key "magit")
     "gg" '(magit-status :which-key "magit status")

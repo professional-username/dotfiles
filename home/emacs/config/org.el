@@ -1,5 +1,8 @@
 ;; Org mode settings
 
+(use-package org
+  :ensure t)
+
 (use-package org-roam
   :ensure t
   :custom
@@ -14,6 +17,7 @@
            "%?"
            :if-new (file+head
                     "thoughts/%<%Y%m%d%H%M%S>-${slug}.org"
-                    "#+title: ${title}\n")
+                    (concat "#+filetags: :thought\n"
+                            "#+title: ${title}\n"))
            :unnarrowed t)))
   (org-roam-db-autosync-mode))
