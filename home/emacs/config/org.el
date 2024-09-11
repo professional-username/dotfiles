@@ -17,7 +17,6 @@
            "%?"
            :if-new (file+head
                     "thoughts/%<%Y%m%d%H%M%S>-${slug}.org"
-                    (concat "#+filetags: :thought\n"
-                            "#+title: ${title}\n"))
+                    "#+filetags: :thought\n#+title: ${title}\n")
            :unnarrowed t)))
   (org-roam-db-autosync-mode))
