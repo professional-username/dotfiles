@@ -1,7 +1,8 @@
 ;; Org mode settings
 
 (use-package org
-  :ensure t)
+  :ensure t
+  :hook (org-mode . visual-line-mode))
 
 (use-package org-roam
   :ensure t
