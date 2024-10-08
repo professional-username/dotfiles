@@ -11,5 +11,6 @@
     tree
     fzf
     jrnl
+    zotero
   ];
 }

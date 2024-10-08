@@ -40,6 +40,7 @@
         "$mod, N, exec, firefox"
         "$mod, RETURN, exec, kitty"
         "$mod SHIFT, E, exec, $GUI_EDITOR"
+        "$mod SHIFT, Z, exec, zotero"
         # Window Rules
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
