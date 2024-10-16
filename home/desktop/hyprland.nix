@@ -33,14 +33,25 @@
         "systemctl --user start set-wallpaper"
       ];
       # Mouse Binds
-      bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
+      bindm = [
+        # Window
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
       # Keybinds
+      binde = [
+        # Utility
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+      ];
       bind = [
         # Program rules
         "$mod, N, exec, firefox"
         "$mod, RETURN, exec, kitty"
         "$mod SHIFT, E, exec, $GUI_EDITOR"
         "$mod SHIFT, Z, exec, zotero"
+        # Utility
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         # Window Rules
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"

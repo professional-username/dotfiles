@@ -7,7 +7,7 @@
   users.users.username = {
     isNormalUser = true;
     description = "username";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     packages = with pkgs; [
       kate
       swww
