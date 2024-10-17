@@ -3,6 +3,9 @@
 
   stylix.targets.hyprland.enable = false;
 
+  # Extra "inventory space"
+  home.sessionVariables = { HYPRLAND_INVENTORY = 1; };
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -70,7 +73,6 @@
 
         "$mod, w, killactive"
         "$mod, f, fullscreen, 0"
-        "$mod SHIFT, f, fakefullscreen"
         "$mod, m, fullscreen, 1"
         "$mod, tab, cyclenext"
         "$mod SHIFT, tab, cyclenext, prev"
