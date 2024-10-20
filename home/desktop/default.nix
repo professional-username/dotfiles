@@ -16,4 +16,20 @@
       horizontal_padding = "12";
     };
   };
+
+  # Launcher
+  programs.tofi = {
+    enable = true;
+
+    settings = {
+      anchor = "bottom-left";
+      corner-radius = "10";
+      prompt-background-corner-radius = "10";
+      margin-left = "40";
+      margin-bottom = "90";
+      outline-width = "0";
+      width = "30%";
+      height = "40%";
+    };
+  };
 }

@@ -47,6 +47,10 @@
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
       ];
+      bindr = [
+        # "Windows key"
+        "$mod, O, exec, tofi-drun"
+      ];
       bind = [
         # Program rules
         "$mod, N, exec, firefox"
