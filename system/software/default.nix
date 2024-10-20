@@ -4,7 +4,7 @@
     ./audio.nix
     ./programs.nix
     ./bootloader
-    ./colours.nix
+    ./stylix.nix
     ./settings.nix
     ./fonts.nix
   ];
