@@ -12,5 +12,6 @@
     fzf
     jrnl
     zotero
+    spotify
   ];
 }
