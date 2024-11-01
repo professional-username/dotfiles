@@ -46,10 +46,15 @@
         # Utility
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+        # Window rules
+        "$mod CONTROL, h, resizeactive, -50 0"
+        "$mod CONTROL, j, resizeactive, 0 50"
+        "$mod CONTROL, k, resizeactive, 0 -50"
+        "$mod CONTROL, l, resizeactive, 50 0"
       ];
       bindr = [
         # "Windows key"
-        "$mod, O, exec, tofi-drun"
+        "$mod, O, exec, tofi-run"
       ];
       bind = [
         # Program rules
@@ -69,10 +74,6 @@
         "$mod SHIFT, k, movewindow, u"
         "$mod SHIFT, l, movewindow, r"
 
-        "$mod CONTROL, h, resizeactive, -50 0"
-        "$mod CONTROL, j, resizeactive, 0 50"
-        "$mod CONTROL, k, resizeactive, 0 -50"
-        "$mod CONTROL, l, resizeactive, 50 0"
         "$mod, c, centerwindow, 1"
 
         "$mod, w, killactive"
