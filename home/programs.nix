@@ -14,5 +14,7 @@
     zotero
     spotify
     aider-chat
+    hyprshot
+    feh
   ];
 }
