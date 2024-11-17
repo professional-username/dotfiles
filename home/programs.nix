@@ -13,5 +13,6 @@
     jrnl
     zotero
     spotify
+    aider-chat
   ];
 }
