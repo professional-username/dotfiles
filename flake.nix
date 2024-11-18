@@ -22,7 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # AGS for widgets
-    ags.url = "github:Aylur/ags";
+    ags.url = "github:Aylur/ags/v1";
   };
 
   outputs =
