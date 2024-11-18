@@ -16,5 +16,6 @@
     aider-chat
     hyprshot
     feh
+    neofetch
   ];
 }
