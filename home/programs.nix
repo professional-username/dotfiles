@@ -3,6 +3,10 @@
   # Enable home-manager self-management
   programs.home-manager.enable = true;
 
+  # TODO: Move this somewhere else
+  programs.zathura.enable = true;
+  programs.zathura.options = { "recolor" = true; };
+
   home.packages = with pkgs; [
     # Some useful cli programs
     neovim
