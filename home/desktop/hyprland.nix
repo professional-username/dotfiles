@@ -63,6 +63,7 @@
         "$mod SHIFT, E, exec, $GUI_EDITOR"
         "$mod SHIFT, Z, exec, zotero"
         "$mod SHIFT, T, exec, steam"
+        "$mod SHIFT, B, exec, blender"
         # Utility
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         "$mod SHIFT, S, exec, hyprshot -m region -o ~/Pictures/Screenshots/"

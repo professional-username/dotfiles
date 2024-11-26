@@ -21,5 +21,6 @@
     hyprshot
     feh
     neofetch
+    blender
   ];
 }
