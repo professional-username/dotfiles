@@ -22,5 +22,6 @@
     feh
     neofetch
     blender
+    bambu-studio
   ];
 }
