@@ -54,7 +54,7 @@
       ];
       bindr = [
         # "Windows key"
-        "$mod, O, exec, tofi-run"
+        "$mod, O, exec, tofi-drun --drun-launch=true"
       ];
       bind = [
         # Program rules
