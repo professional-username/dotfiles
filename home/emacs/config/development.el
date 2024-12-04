@@ -82,3 +82,24 @@
   (vterm-shell "$SHELL")
   (vterm-always-compile-module t))
 
+(use-package scad-mode
+  :ensure t
+  :bind (:map scad-preview-mode-map
+              ("M-l" . scad-preview-translate-x+)
+              ("M-h" . scad-preview-translate-x-)
+              ("M-k" . scad-preview-translate-y+)
+              ("M-j" . scad-preview-translate-y-)
+              ("M-p" . scad-preview-translate-z+)
+              ("M-n" . scad-preview-translate-z-)
+
+              ("C-h" . scad-preview-rotate-z-)
+              ("C-j" . scad-preview-rotate-x-)
+              ("C-k" . scad-preview-rotate-x+)
+              ("C-l" . scad-preview-rotate-z+)
+
+              ("C-M-k" . scad-preview-distance+)
+              ("C-M-j" . scad-preview-distance-)
+
+              ("C-;" . scad-preview-projection)
+              ))
+

@@ -44,5 +44,8 @@
       # Org mode
       org
       org-roam
+
+      # Openscad
+      scad-mode
     ];
 }

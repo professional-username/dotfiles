@@ -30,5 +30,7 @@
     rustfmt # Rust formatter
     gofumpt # Go formatter
     shfmt # Shell script formatter
+
+    openscad-lsp
   ];
 }
