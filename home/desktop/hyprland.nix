@@ -1,7 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [ ];
 
-  x.targets.hyprland.enable = false;
+  stylix.targets.hyprland.enable = false;
 
   # Extra "inventory space"
   home.sessionVariables = { HYPRLAND_INVENTORY = 1; };
@@ -11,6 +11,7 @@
 
     settings = {
       monitor = [ "DP-1,3840x2160@120,0x0,1" ];
+      xwayland.force_zero_scaling = true;
       general = {
         # Borders etc
         border_size = 5;

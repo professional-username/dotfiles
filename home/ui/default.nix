@@ -7,7 +7,7 @@ in {
 
   # Scaling environment variables
   home.sessionVariables = {
-    GDK_SCALE = "1";
+    GDK_SCALE = "2";
     GDK_DPI_SCALE = "0.5";
     QT_QPA_PLATFORM = "wayland";
     QT_WAYLAND_FORCE_DPI = "225";
