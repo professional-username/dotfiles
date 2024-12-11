@@ -1,7 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [ ];
 
-  stylix.targets.hyprland.enable = false;
+  x.targets.hyprland.enable = false;
 
   # Extra "inventory space"
   home.sessionVariables = { HYPRLAND_INVENTORY = 1; };

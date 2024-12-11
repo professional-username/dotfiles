@@ -23,6 +23,5 @@
     neofetch
     blender
     bambu-studio
-    openscad
   ];
 }

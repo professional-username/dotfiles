@@ -13,6 +13,7 @@
     ./programs.nix
     ./emacs
     ./ui
+    ./openscad
   ];
 
   home = {
