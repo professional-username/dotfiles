@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     # Manage CAD-related configs
-    ./openscad.nix
-    ./plasticity.nix
+    #./openscad.nix
+    #./plasticity.nix
   ];
 }

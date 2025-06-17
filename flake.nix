@@ -34,7 +34,7 @@
       # NixOS configuration entrypoint
       nixosConfigurations = {
         # Config for gpteapot system
-        gpteapot = nixpkgs.lib.nixosSystem {
+        apollo = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs defaultWallpaper; };
           modules = [
             # System-level configuration
