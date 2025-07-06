@@ -11,7 +11,7 @@
 
     settings = {
       monitor =
-        [ "HDMI-A-1,2560x1330@60,0x0,1" "HDMI-A-2,2560x1330@60,2560x0,1" ];
+        [ "HDMI-A-3,2560x1330@60,0x0,1" "HDMI-A-2,2560x1330@60,2560x0,1" ];
       xwayland.force_zero_scaling = true;
       general = {
         # Borders etc
