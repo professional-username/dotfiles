@@ -9,6 +9,7 @@ in {
   qt.enable = true;
   # Set the sddm theme
   services.displayManager.sddm = {
+    package = pkgs.kdePackages.sddm; # use qt6 version of sddm
     enable = true; # Enable SDDM.
     wayland.enable = true;
     enableHidpi = true;
