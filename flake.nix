@@ -16,17 +16,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Sddm theme
-    sddm-sugar-candy-nix = {
-      url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
-      # Optional, by default this flake follows nixpkgs-unstable.
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # AGS for widgets
+    # sddm-sugar-candy-nix = {
+    #   url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
+    #   # Optional, by default this flake follows nixpkgs-unstable.
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # # AGS for widgets
     ags.url = "github:Aylur/ags/v1";
+    # Custom sddm
+    silentSDDM.url = "github:uiriansan/SilentSDDM";
+    silentSDDM.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    { self, nixpkgs, home-manager, stylix, sddm-sugar-candy-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
     let
       inherit (self) outputs;
       defaultWallpaper = ./images/wallpaper_default.jpg;
@@ -39,7 +41,7 @@
           modules = [
             # System-level configuration
             ./system/configuration.nix
-            sddm-sugar-candy-nix.nixosModules.default
+            # sddm-sugar-candy-nix.nixosModules.default
 
             # Stylix
             stylix.nixosModules.stylix

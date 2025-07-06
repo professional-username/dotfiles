@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./sddm.nix ];
+  # imports = [ ./sddm.nix ];
 
   # Enable hyprland
   programs.hyprland = {

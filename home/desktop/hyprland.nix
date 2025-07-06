@@ -10,7 +10,8 @@
     enable = true;
 
     settings = {
-      monitor = [ "DP-1,3840x2160@120,0x0,1" ];
+      monitor =
+        [ "HDMI-A-1,2560x1330@60,0x0,1" "HDMI-A-2,2560x1330@60,2560x0,1" ];
       xwayland.force_zero_scaling = true;
       general = {
         # Borders etc

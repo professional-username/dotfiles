@@ -5,6 +5,7 @@
     # Install system-wide fonts
     fira-code
     fira-code-symbols
-    nerdfonts
+    nerd-fonts.fira-code
   ];
+
 }

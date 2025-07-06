@@ -18,7 +18,7 @@
     nodePackages.vscode-langservers-extracted # HTML/CSS/JSON
     nodePackages.eslint # JavaScript linter
     nodePackages.graphql-language-service-cli
-    nodePackages.vls # Vite / Vite
+    # nodePackages.vls # Vite / Vite
     stylelint # CSS/SCSS linter
 
     # Code formatters

@@ -8,11 +8,12 @@
     isNormalUser = true;
     description = "username";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
-    packages = with pkgs; [
-      kate
-      swww
-      #  thunderbird
-    ];
+    packages = with pkgs;
+      [
+        # kate # It's a text editor?
+        swww
+        #  thunderbird
+      ];
   };
 
   # Set default user shell

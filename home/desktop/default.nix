@@ -3,7 +3,7 @@
     # Manage Desktop-related configurations
     ./hyprland.nix
     ./swww.nix
-    ./ags
+    # ./ags # Replace with quickshell
   ];
 
   # Notification daemon
