@@ -61,6 +61,7 @@
   ;; (setq flycheck-eglot-exclusive nil)
   (global-flycheck-eglot-mode 1))
 
+;; Code formatting
 (use-package apheleia
   :config
   (apheleia-global-mode +1)
