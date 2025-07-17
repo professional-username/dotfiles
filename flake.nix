@@ -26,6 +26,10 @@
     # Custom sddm
     silentSDDM.url = "github:uiriansan/SilentSDDM";
     silentSDDM.inputs.nixpkgs.follows = "nixpkgs";
+    # Hyprland multiple monitor support
+    hyprland.url = "github:hyprwm/Hyprland";
+    split-monitor-workspaces.url = "github:Duckonaut/split-monitor-workspaces";
+    split-monitor-workspaces.inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:

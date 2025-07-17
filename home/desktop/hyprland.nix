@@ -1,4 +1,12 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, ... }:
+
+let
+  monitors = {
+    primary = [];
+    secondary = [];
+  };
+
+in {
   imports = [ ];
 
   stylix.targets.hyprland.enable = false;
@@ -7,9 +15,20 @@
   home.sessionVariables = { HYPRLAND_INVENTORY = 1; };
 
   wayland.windowManager.hyprland = {
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces ];
     enable = true;
 
     settings = {
+      plugin = {
+        split-monitor-workspaces = {
+          count = 10;
+          keep_focused = 0;
+          enable_notifications = 0;
+          enable_persistent_workspaces = 1;
+        };
+      };
+
       monitor =
         [ "HDMI-A-3,2560x1330@60,0x0,1" "HDMI-A-2,2560x1330@60,2560x0,1" ];
       xwayland.force_zero_scaling = true;
@@ -25,6 +44,10 @@
         inactive_opacity = 0.9;
         blur.size = 20;
       };
+
+      # Set up Workspaces
+      # workspace = [
+      # ];
 
       input = {
         kb_options = "caps:escape";
@@ -87,23 +110,27 @@
         "$mod, f, fullscreen, 0"
         "$mod, m, fullscreen, 1"
         "$mod, tab, cyclenext"
-        "$mod SHIFT, tab, cyclenext, prev"
+        "$mod SHIFT, tab, cyclenext, cyclenext"
         "$mod, s, togglefloating"
         # Workspace rules
-        "$mod, bracketright, workspace, +1"
-        "$mod, bracketleft, workspace, -1"
+        "$mod, bracketright, split-cycleworkspacesnowrap, +1"
+        "$mod, bracketleft, split-cycleworkspacesnowrap, -1"
         "$mod, SPACE, togglespecialworkspace"
         "$mod SHIFT, SPACE, movetoworkspace, special"
+
+        # The 10th workspace
+        "$mod, 0, split-workspace, 10"
+        "$mod SHIFT, 0, split-movetoworkspacesilent, 10"
       ] ++ (
-        # workspaces
-        # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-        builtins.concatLists (builtins.genList (x:
-          let
-            ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
-          in [
-            "$mod, ${ws}, workspace, ${toString (x + 1)}"
-            "$mod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
-          ]) 10));
+        builtins.concatLists (builtins.genList
+          (x:
+            let
+              ws = builtins.toString (x + 1);
+            in
+            [
+              "$mod, ${ws}, split-workspace, ${ws}"
+              "$mod SHIFT, ${ws}, split-movetoworkspacesilent, ${ws}"
+            ]) 9));
       # Miscallaneous settings
       misc = {
         disable_hyprland_logo = true;
