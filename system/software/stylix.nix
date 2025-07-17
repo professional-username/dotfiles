@@ -4,7 +4,8 @@
   stylix = {
     # Colours
     enable = true;
-    image = defaultWallpaper;
+    image = null;
+    # image = defaultWallpaper;
     polarity = "dark";
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
