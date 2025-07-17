@@ -1,31 +1,43 @@
-{ inputs, lib, config, pkgs, ... }:
-
-let
-  monitors = {
-    primary = [];
-    secondary = [];
-  };
-
-in {
+{ inputs, lib, config, pkgs, ... }: {
   imports = [ ];
 
-  stylix.targets.hyprland.enable = false;
+  stylix.targets.hyprland.enable = true;
 
   # Extra "inventory space"
   home.sessionVariables = { HYPRLAND_INVENTORY = 1; };
 
   wayland.windowManager.hyprland = {
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces ];
+    plugins = [
+      inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+    ];
     enable = true;
 
     settings = {
       plugin = {
+        # Multi-monitor stuff
         split-monitor-workspaces = {
           count = 10;
           keep_focused = 0;
           enable_notifications = 0;
           enable_persistent_workspaces = 1;
+        };
+        # Window bars
+        hyprbars = {
+          bar_height = 38;
+          on_double_click = "hyprctl dispatch fullscreen 1";
+          bar_button_padding = 12;
+          bar_padding = 10;
+          bar_color = "rgb(${config.lib.stylix.colors.base01})";
+          # bar_part_of_window = true;
+          # bar_precedent_over_border = true;
+          bar_title_enabled = false;
+          hyprbars-button = [
+            "rgb(${config.lib.stylix.colors.base08}), 23, 󰖭, hyprctl dispatch killactive, rgb(${config.lib.stylix.colors.base01})"
+            "rgb(${config.lib.stylix.colors.base0A}), 23, , hyprctl dispatch fullscreen 1, rgb(${config.lib.stylix.colors.base01})"
+            "rgb(${config.lib.stylix.colors.base0B}), 23, , hyprctl dispatch togglefloating, rgb(${config.lib.stylix.colors.base01})"
+          ];
         };
       };
 
@@ -41,9 +53,15 @@ in {
       # Decoration
       decoration = {
         rounding = 10;
-        inactive_opacity = 0.9;
+        # inactive_opacity = 0.9;
         blur.size = 20;
       };
+
+      # Window Rules
+      windowrule = [
+        "plugin:hyprbars:bar_color rgb(${config.lib.stylix.colors.base0D}), focus:1"
+        "plugin:hyprbars:bar_color rgb(${config.lib.stylix.colors.base03}), focus:0"
+      ];
 
       # Set up Workspaces
       # workspace = [
@@ -135,7 +153,7 @@ in {
       misc = {
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
-        background_color = "0x26233a";
+        # background_color = "0x26233a";
       };
     };
   };
