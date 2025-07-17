@@ -1,4 +1,9 @@
 { inputs, lib, config, pkgs, ... }: {
+
+  stylix.targets.firefox.profileNames = ["username"];
+  stylix.targets.firefox.enable = true;
+  stylix.targets.firefox.firefoxGnomeTheme.enable = true;
+
   # Setup the default profile
   programs.firefox.profiles = {
     username = {
