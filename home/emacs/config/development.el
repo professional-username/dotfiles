@@ -68,6 +68,42 @@
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 4))
 
+;; Code highlighting
+;; (use-package tree-sitter
+;;   :ensure t
+;;   :config
+;;   (require 'tree-sitter)
+;;   (require 'tree-sitter-langs)
+;;   (global-tree-sitter-mode)
+;;   (add-hook 'qml-ts-mode-hook #'tree-sitter-mode))
+
+;; (use-package tree-sitter-langs
+;;   :ensure t
+;;   :after tree-sitter)
+
+;; (use-package undo-tree
+;;   :after evil
+;;   :config
+;;   (setq undo-tree-auto-save-history nil)
+;;   (advice-add #'evil-undo :override #'undo-tree-undo)
+;;   (advice-add #'evil-redo :override #'undo-tree-redo)
+;;   (define-key evil-normal-state-map (kbd "SPC u v") #'undo-tree-visualize)
+;;   (global-undo-tree-mode))
+
+
+;; (use-package tree-sitter-qmljs)
+;; QML langauge (quickhell etc)
+(use-package qml-ts-mode
+  :ensure nil
+  :after eglot
+  :config
+  (add-to-list 'eglot-server-programs
+               '(qml-ts-mode . ("qmlls" "-E")))
+  (add-hook 'qml-ts-mode-hook
+            (lambda ()
+              (setq-local electric-indent-chars '(?\n ?\( ?\) ?{ ?} ?\[ ?\] ?\; ?,))
+              (eglot-ensure))))
+
 (use-package company
   :after eglot
   :hook (eglot-managed-mode . company-mode)

@@ -1,5 +1,8 @@
-{ config, pkgs, ... }: {
+{ inputs, config, pkgs, ... }:
+{
   imports = [ ./packages.nix ];
+
+  stylix.targets.emacs.enable = true;
 
   programs.emacs = {
     enable = true;
@@ -8,6 +11,7 @@
       (setenv "XDG_CONFIG_HOME" (expand-file-name "~/.config"))
     '';
   };
+
 
   home.file = {
     ".config/emacs/early-init.el".source = ./config/early-init.el;

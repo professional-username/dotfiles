@@ -3,6 +3,7 @@
     # Manage Desktop-related configurations
     ./hyprland.nix
     ./swww.nix
+    ./quickshell
     # ./ags # Replace with quickshell
   ];
 

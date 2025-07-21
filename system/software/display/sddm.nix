@@ -5,8 +5,24 @@ let
     theme = "catppuccin-mocha";
   };
 in {
+    # services.xrandr.xrandrHeads = [
+    #   {
+    #     output = "HDMI-A-3";
+    #     primary = true;
+    #   }
+    # ];
+
+  # Use wayland
+  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.xserver.displayManager.sessionCommands = ''
+    ${pkgs.xorg.xrdb}/bin/xrdb -merge /etc/X11/XResources
+    ${pkgs.nitrogen}/bin/nitrogen --restore &
+    ${pkgs.xorg.xset}/bin/xset r rate 250 25
+  '';
+
   environment.systemPackages = [ sddm-theme ];
   qt.enable = true;
+
   # Set the sddm theme
   services.displayManager.sddm = {
     package = pkgs.kdePackages.sddm; # use qt6 version of sddm
