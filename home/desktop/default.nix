@@ -4,7 +4,6 @@
     ./hyprland.nix
     ./swww.nix
     ./quickshell
-    # ./ags # Replace with quickshell
   ];
 
   # Notification daemon

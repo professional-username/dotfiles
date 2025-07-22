@@ -74,7 +74,7 @@
       "$mod" = "SUPER";
       "$GUI_EDITOR" = "emacs";
       exec-once = [
-        "ags"
+        "quickshell"
         "systemctl --user start swww"
         "systemctl --user start set-wallpaper"
       ];
