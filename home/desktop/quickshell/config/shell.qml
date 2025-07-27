@@ -1,5 +1,9 @@
+//@ pragma UseQApplication
+
 import Quickshell
+import "LeftBar"
+
 
 Scope {
-    BottomBar {}
+    Bar {}
 }

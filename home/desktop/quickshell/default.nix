@@ -10,4 +10,6 @@
     recursive = false;
     force = true;
   };
+
+  stylix.targets.qt.enable = true;
 }
