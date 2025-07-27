@@ -3,6 +3,9 @@
 
   stylix.targets.hyprland.enable = true;
 
+  # Install hyprcursor
+  home.packages = with pkgs; [rose-pine-hyprcursor];
+
   # Extra "inventory space"
   home.sessionVariables = { HYPRLAND_INVENTORY = 1; };
 
@@ -15,6 +18,10 @@
     enable = true;
 
     settings = {
+      env = [
+        "HYPRCURSOR_THEME,rose-pine-hyprcursor"
+      ];
+
       plugin = {
         # Multi-monitor stuff
         split-monitor-workspaces = {
