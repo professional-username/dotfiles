@@ -9,7 +9,6 @@
     polarity = "dark";
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/apathy.yaml";
 
     targets.grub.enable = false;
 

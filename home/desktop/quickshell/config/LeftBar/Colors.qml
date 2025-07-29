@@ -2,53 +2,51 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 
-Rectangle {    // implicitWidth: 100
-    implicitHeight: 100
+Rectangle {
+    implicitWidth: layout.width + 10
+    implicitHeight: layout.height + 10
 
-    border.color: "black"
-    border.width: 4
-    // color: "black"
-    // anchors.fill: parent
-    // anchors.centerIn: parent
+    color: this.palette.base
     Layout.alignment: Qt.AlignHCenter
     Layout.fillWidth: true
-    Layout.fillHeight: true
-
-    // Use the system palette, which should be set by stylix
-    SystemPalette { id: stylix; colorGroup: SystemPalette.Active }
+    // Layout.fillHeight: true
 
     ColumnLayout {
         anchors.centerIn: parent
-        spacing: 2
+        id: layout
+        spacing: 4
 
+        // Links (Also the 2 main accent colours of the theme)
         ColorSwatch{ swatchColor: this.palette.link }
-        // ColorSwatch{ swatchColor: stylix.link }
+        ColorSwatch{ swatchColor: this.palette.linkVisited }
 
-        ColorSwatch{ swatchColor: stylix.window }
-        ColorSwatch{ swatchColor: stylix.base }
-        ColorSwatch{ swatchColor: stylix.alternateBase }
-        ColorSwatch{ swatchColor: stylix.button }
-        ColorSwatch{ swatchColor: stylix.light }
-        ColorSwatch{ swatchColor: stylix.midlight }
-        ColorSwatch{ swatchColor: stylix.dark }
-        ColorSwatch{ swatchColor: stylix.mid }
-        ColorSwatch{ swatchColor: stylix.highlight }
-        // Inactive highlight
-        ColorSwatch{ swatchColor: stylix.text }
-        ColorSwatch{ swatchColor: stylix.windowText }
-        ColorSwatch{ swatchColor: stylix.buttonText }
-        // Disabled text
-        // Tooltip text
-        ColorSwatch{ swatchColor: stylix.highlightedText }
-        // link
-        // link visited
+        // Base colours
+        ColorSwatch{ swatchColor: this.palette.base }
+        ColorSwatch{ swatchColor: this.palette.alternateBase }
+        ColorSwatch{ swatchColor: this.palette.window } // Same as alt base
+        ColorSwatch{ swatchColor: this.palette.button } // Lighter than alt base
 
-        ColorSwatch{ swatchColor: stylix.placeholderText }
-        ColorSwatch{ swatchColor: stylix.shadow }
+        // Text colours
+        ColorSwatch{ swatchColor: this.palette.text }
+        // ColorSwatch{ swatchColor: this.palette.windowText } // Same as Text
+        // ColorSwatch{ swatchColor: this.palette.buttonText } // Text
+
+        // ---------------------------------------------------
+
+        // Different shades
+        ColorSwatch{ swatchColor: this.palette.dark } // base
+        ColorSwatch{ swatchColor: this.palette.light } // light
+
+        // Highlighted (repeates of above, if ever needed for reference)
+        ColorSwatch{ swatchColor: this.palette.highlight } // Same as light
+        ColorSwatch{ swatchColor: this.palette.highlightedText } // Same as text
     }
 
     component ColorSwatch: Rectangle {
         required property string swatchColor
+        border.color: this.palette.alternateBase
+        border.width: 3
+        radius: 8
         color: swatchColor
 
         implicitHeight: 30
