@@ -2,11 +2,13 @@ import Quickshell // for PanelWindow
 import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
+import "BarTop"
+import "BarMiddle"
+import "BarBottom"
 
 Scope {
     Variants {
         model: Quickshell.screens
-
 
         PanelWindow {
             required property var modelData
@@ -18,29 +20,24 @@ Scope {
                 left: true
                 top: true
             }
+            implicitWidth: 60
 
-            implicitWidth: 50
-
-            ColumnLayout {
-                // border.color: "black"
+            // The coloured rectangle because PanelWindow does not have a palette
+            Rectangle{
                 anchors.fill: parent
-                spacing: 5
+                anchors.centerIn: parent
+                color: this.palette.base
 
-                ClockWidget {
-                    Layout.alignment: Qt.AlignTop
-                    Layout.fillHeight: true
-                }
+                ColumnLayout {
+                    anchors.fill: parent
+                    // spacing: 5
 
-                Colors {
-                    // Layout.alignment: Qt.AlignVCenter
-                    // Layout.fillHeight: true
-                }
+                    BarTop {}
 
-                ClockWidget {
-                    Layout.alignment: Qt.AlignBottom
-                    Layout.fillHeight: true
+                    BarMiddle {}
+
+                    BarBottom {}
                 }
-                
             }
         }
     }
