@@ -30,7 +30,6 @@ Scope {
 
                 ColumnLayout {
                     anchors.fill: parent
-                    // spacing: 5
 
                     BarTop {}
 
