@@ -12,24 +12,21 @@ Rectangle {
     // Layout.fillWidth: true
     Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
 
-    radius: 6
-    // border.color: this.palette.link
-    // color: this.palette.alternateBase
+    // radius: 6
     color: "transparent"
+    // border.color: this.palette.text
+    // color: this.palette.alternateBase
     // border.width: 3
 
     ColumnLayout {
         id: layout
         anchors.centerIn: parent
+        // anchors.top: parent.top
 
-        BarPadding {size: 10}
+        BarPadding {size: 2}
+
+        OsSymbol {}
 
         ClockWidget {}
-
-        Text {
-            Layout.alignment: Qt.AlignHCenter
-            text: "O"
-            color: this.palette.text
-        }
     }
 }
