@@ -7,7 +7,18 @@
   };
 
   # Cuda packages
-  environment.systemPackages = [ pkgs.cudatoolkit ];
+  nixpkgs.config.cudaSupport = true;
+  environment.systemPackages = with pkgs; [
+    cudaPackages.cudatoolkit
+    linuxPackages.nvidia_x11
+    cudaPackages.cudnn
+  ];
+  environment.sessionVariables = {
+    CUDA_PATH = pkgs.cudatoolkit;
+    LD_LIBRARY_PATH = "${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.ncurses5}/lib";
+    EXTRA_LDFLAGS = "-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib";
+    EXTRA_CCFLAGS = "-I/usr/include";
+  };
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
