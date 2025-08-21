@@ -1,6 +1,6 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    # ./devenv.nix
+    ./devenv.nix
     ./git.nix
     ./languages.nix
   ];
