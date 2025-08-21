@@ -23,6 +23,9 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package rainbow-mode
+  :hook (prog-mode .))
+
 (use-package treemacs-nerd-icons
   :config
   (treemacs-load-theme "nerd-icons"))

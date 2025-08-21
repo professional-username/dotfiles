@@ -93,5 +93,8 @@ in {
       # QML
       undo-tree
       inputs.nix-qml-support.packages.${pkgs.stdenv.system}.qml-ts-mode
+
+      # Eye candy
+      rainbow-mode
     ];
 }
