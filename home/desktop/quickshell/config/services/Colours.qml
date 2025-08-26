@@ -157,6 +157,31 @@ Singleton {
     }
 
     component M3Palette: QtObject {
+        // // Links (Also the 2 main accent colours of the theme)
+        // ColorSwatch{ swatchColor: this.palette.link }
+        // ColorSwatch{ swatchColor: this.palette.linkVisited }
+
+        // // Base colours
+        // ColorSwatch{ swatchColor: this.palette.base }
+        // ColorSwatch{ swatchColor: this.palette.alternateBase }
+        // ColorSwatch{ swatchColor: this.palette.window } // Same as alt base
+        // ColorSwatch{ swatchColor: this.palette.button } // Lighter than alt base
+
+        // // Text colours
+        // ColorSwatch{ swatchColor: this.palette.text }
+        // // ColorSwatch{ swatchColor: this.palette.windowText } // Same as Text
+        // // ColorSwatch{ swatchColor: this.palette.buttonText } // Text
+
+        // // ---------------------------------------------------
+
+        // // Different shades
+        // ColorSwatch{ swatchColor: this.palette.dark } // base
+        // ColorSwatch{ swatchColor: this.palette.light } // light
+
+        // // Highlighted (repeates of above, if ever needed for reference)
+        // ColorSwatch{ swatchColor: this.palette.highlight } // Same as light
+        // ColorSwatch{ swatchColor: this.palette.highlightedText } // Same as text
+
         property color m3primary_paletteKeyColor: "#a26387"
         property color m3secondary_paletteKeyColor: "#8b6f7d"
         property color m3tertiary_paletteKeyColor: "#9c6c53"
@@ -211,6 +236,7 @@ Singleton {
         property color m3tertiaryFixedDim: "#f3ba9c"
         property color m3onTertiaryFixed: "#311302"
         property color m3onTertiaryFixedVariant: "#653d27"
+        // #ffffff
         property color term0: "#353434"
         property color term1: "#fe45a7"
         property color term2: "#ffbac0"
