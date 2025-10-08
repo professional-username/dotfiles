@@ -6,6 +6,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Don't know where this is required but can't run without it
+  nixpkgs.config.permittedInsecurePackages = [
+    "libsoup-2.74.3"
+  ];
+
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
