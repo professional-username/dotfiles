@@ -138,16 +138,14 @@
         successContainer = config.lib.stylix.colors.base01;
         onSuccessContainer = config.lib.stylix.colors.base06;
     };
-  };
 
-  # programs.caelestia = {
-  #   settings = {
-  #       bar.status = {
-  #         showBattery = false;
-  #       };
-  #       paths.wallpaperDir = "~/Pictures/wallpapers";
-  #   };
-  # };
+    caelestia.shell.settings = {
+      background.enabled = false;
+      bar.status = {
+        showBattery = false;
+      };
+    };
+  };
 
   # home.file.".config/quickshell/" = {
   #   source = ./config;
