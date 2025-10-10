@@ -37,6 +37,12 @@
     quickshell.inputs.nixpkgs.follows = "nixpkgs";
     nix-qml-support.url = "git+https://git.outfoxxed.me/outfoxxed/nix-qml-support"; # Grammar etc
     nix-qml-support.inputs.nixpkgs.follows = "nixpkgs";
+    # Caelestia
+    # caelestia-shell.url = "github:caelestia-dots/shell";
+    # caelestia-shell.inputs.nixpkgs.follows = "nixpkgs";
+
+    caelestia-nix.url = "github:Markus328/caelestia-nix";
+    caelestia-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
