@@ -17,11 +17,11 @@
     jrnl
     zotero
     spotify
-    aider-chat
+    # aider-chat
     hyprshot
     feh
     neofetch
     blender
-    bambu-studio
+    # bambu-studio
   ];
 }
