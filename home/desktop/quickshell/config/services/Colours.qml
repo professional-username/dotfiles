@@ -187,12 +187,12 @@ Singleton {
         property color m3tertiary_paletteKeyColor: "#9c6c53"
         property color m3neutral_paletteKeyColor: "#7f7478"
         property color m3neutral_variant_paletteKeyColor: "#827379"
-        property color m3background: "#181115"
+        property color m3background: this.palette.base
         property color m3onBackground: "#eddfe4"
-        property color m3surface: "#181115"
-        property color m3surfaceDim: "#181115"
+        property color m3surface: this.palette.base
+        property color m3surfaceDim: this.palette.base
         property color m3surfaceBright: "#40373b"
-        property color m3surfaceContainerLowest: "#130c10"
+        property color m3surfaceContainerLowest: this.palette.base
         property color m3surfaceContainerLow: "#211a1d"
         property color m3surfaceContainer: "#251e21"
         property color m3surfaceContainerHigh: "#30282b"
@@ -204,8 +204,8 @@ Singleton {
         property color m3inverseOnSurface: "#362e32"
         property color m3outline: "#9c8d93"
         property color m3outlineVariant: "#504349"
-        property color m3shadow: "#000000"
-        property color m3scrim: "#000000"
+        property color m3shadow: this.palette.base
+        property color m3scrim: this.palette.base
         property color m3surfaceTint: "#fbb1d8"
         property color m3primary: "#fbb1d8"
         property color m3onPrimary: "#511d3e"
@@ -219,7 +219,7 @@ Singleton {
         property color m3tertiary: "#f3ba9c"
         property color m3onTertiary: "#4a2713"
         property color m3tertiaryContainer: "#b8856a"
-        property color m3onTertiaryContainer: "#000000"
+        property color m3onTertiaryContainer: this.palette.base
         property color m3error: "#ffb4ab"
         property color m3onError: "#690005"
         property color m3errorContainer: "#93000a"
@@ -253,5 +253,6 @@ Singleton {
         property color term13: "#f3a9cd"
         property color term14: "#ffd1c0"
         property color term15: "#ffffff"
+
     }
 }
