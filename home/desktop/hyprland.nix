@@ -18,6 +18,12 @@
     enable = true;
 
     settings = {
+
+      _1submap = {
+        exec = ["hyprctl dispatch submap global"];
+        submap = "global";
+      };
+
       env = [
         "HYPRCURSOR_THEME,rose-pine-hyprcursor"
       ];
@@ -85,6 +91,23 @@
         "systemctl --user start swww"
         "systemctl --user start set-wallpaper"
       ];
+      # Caelestia binds
+
+      _2launcher = {
+        bindi = ["Super, Super_L, global, caelestia:launcher"];
+        bindin = [
+          "Super, catchall, global, caelestia:launcherInterrupt"
+          "Super, mouse:272, global, caelestia:launcherInterrupt"
+          "Super, mouse:273, global, caelestia:launcherInterrupt"
+          "Super, mouse:274, global, caelestia:launcherInterrupt"
+          "Super, mouse:275, global, caelestia:launcherInterrupt"
+          "Super, mouse:276, global, caelestia:launcherInterrupt"
+          "Super, mouse:277, global, caelestia:launcherInterrupt"
+          "Super, mouse_up, global, caelestia:launcherInterrupt"
+          "Super, mouse_down, global, caelestia:launcherInterrupt"
+        ];
+      };
+
       # Mouse Binds
       bindm = [
         # Window
