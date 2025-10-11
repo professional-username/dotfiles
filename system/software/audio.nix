@@ -1,7 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
+let
+  spicetify = inputs.spicetify-nix.lib.mkSpicetify pkgs {
+    #config options
+  };
+in {
+  imports = [
+    # Example for NixOS
+    inputs.spicetify-nix.nixosModules.spicetify 
+  ];
 
-{
-  imports = [ ];
+  programs.spicetify = {
+    enable = true;
+    #config options
+  };
 
   environment.systemPackages = with pkgs; [ pavucontrol ];
 

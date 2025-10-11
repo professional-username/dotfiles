@@ -16,7 +16,7 @@
     fzf
     jrnl
     zotero
-    spotify
+    # spotify
     # aider-chat
     hyprshot
     feh

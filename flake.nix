@@ -43,6 +43,10 @@
 
     caelestia-nix.url = "github:Markus328/caelestia-nix";
     caelestia-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Spicetify
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
