@@ -139,10 +139,12 @@
         "$mod SHIFT, B, exec, blender"
         # Utility
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        "$mod SHIFT, S, exec, hyprshot -m region -o ~/Pictures/Screenshots/"
-        "$mod CONTROL, S, exec, hyprshot -m window -o ~/Pictures/Screenshots/"
-        ", Print, exec, hyprshot -m output -o ~/Pictures/Screenshots/"
-        # Window Rules
+        "$mod SHIFT, S, exec, caelestia shell picker openFreeze"
+        "$mod CONTROL, S, exec, caelestia shell picker open"
+        # "$mod SHIFT, S, exec, hyprshot -m region -o ~/Pictures/Screenshots/"
+        # "$mod CONTROL, S, exec, hyprshot -m window -o ~/Pictures/Screenshots/"
+        # ", Print, exec, hyprshot -m output -o ~/Pictures/Screenshots/"
+        # # Window Rules
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"

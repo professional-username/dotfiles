@@ -5,6 +5,17 @@
     inputs.caelestia-nix.homeManagerModules.default
   ];
 
+  # Configuration file for swappy
+  home.file."swappy-config" = {
+    target = ".config/swappy/config";
+    text = ''
+        [Default]
+        save_dir=$HOME/Pictures/Screenshots
+        early_exit=true
+        auto_save=true
+    '';
+  };
+
   programs.caelestia-dots = {
     enable = true;
     hypr.enable = false;
