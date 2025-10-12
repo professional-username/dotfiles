@@ -5,6 +5,8 @@
     inputs.caelestia-nix.homeManagerModules.default
   ];
 
+  home.packages = with pkgs; [ gpu-screen-recorder ];
+
   # Configuration file for swappy
   home.file."swappy-config" = {
     target = ".config/swappy/config";
