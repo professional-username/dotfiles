@@ -5,7 +5,11 @@
     inputs.caelestia-nix.homeManagerModules.default
   ];
 
-  home.packages = with pkgs; [ gpu-screen-recorder kdePackages.dolphin ];
+  home.packages = with pkgs; [
+    gpu-screen-recorder
+    kdePackages.dolphin
+    # caelestia-cli
+  ];
 
   # Configuration file for swappy
   home.file."swappy-config" = {
@@ -17,6 +21,19 @@
         auto_save=true
     '';
   };
+  
+  # xdg = {
+  #   mimeApps = {
+  #     enable = true;
+  #     defaultApplications = {
+  #       "inode/directory" = "org.kde.dolphin.desktop";
+  #     };
+  #     # addedAssociations = {
+  #     #   "inode/directory" = [ "org.kde.dolphin.desktop" ];
+  #     # };
+  #   };
+  # };
+
 
   programs.caelestia-dots = {
     enable = true;
@@ -28,6 +45,8 @@
       bar.status = {
         showBattery = false;
       };
+      general.apps.explorer = ["dolphin"]; # TODO: Doesn't work / open video file from widget
+      notifs.actionOnClick = true; #
     };
   };
 
