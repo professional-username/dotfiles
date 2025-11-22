@@ -13,6 +13,9 @@
 ;; Font size etc
 (set-face-attribute 'default nil :height 100)
 
+(use-package fira-code-mode
+  :config (global-fira-code-mode))
+
 ;; Disable line numbers for some modes
 (dolist (mode '(org-mode-hook
                 term-mode-hook

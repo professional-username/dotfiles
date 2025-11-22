@@ -96,5 +96,6 @@ in {
 
       # Eye candy
       rainbow-mode
+      fira-code-mode
     ];
 }
