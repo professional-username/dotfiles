@@ -10,10 +10,10 @@
   home.sessionVariables = { HYPRLAND_INVENTORY = 1; };
 
   wayland.windowManager.hyprland = {
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     plugins = [
-      inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
     ];
     enable = true;
 
@@ -72,8 +72,8 @@
 
       # Window Rules
       windowrule = [
-        "plugin:hyprbars:bar_color rgb(${config.lib.stylix.colors.base0D}), focus:1"
-        "plugin:hyprbars:bar_color rgb(${config.lib.stylix.colors.base03}), focus:0"
+        "hyprbars:bar_color rgb(${config.lib.stylix.colors.base0D}), match:focus 1"
+        "hyprbars:bar_color rgb(${config.lib.stylix.colors.base03}), match:focus 0"
       ];
 
       # Set up Workspaces

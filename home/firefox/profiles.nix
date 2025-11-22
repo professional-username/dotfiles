@@ -13,11 +13,11 @@
 
       search = {
         force = true;
-        default = "DuckDuckGo";
-        order = [ "DuckDuckGo" ];
+        default = "ddg";
+        order = [ "ddg" ];
       };
 
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+      extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
         bitwarden
         ublock-origin
         vimium-c
@@ -28,8 +28,8 @@
       settings = {
         # "browser.startup.homepage" = "https://duckduckgo.com";
         "layout.css.devPixelsPerPx" = 1.0;
-        "browser.search.defaultenginename" = "DuckDuckGo";
-        "browser.search.order.1" = "DuckDuckGo";
+        "browser.search.defaultenginename" = "ddg";
+        "browser.search.order.1" = "ddg";
 
         "signon.rememberSignons" = false;
         # "widget.use-xdg-desktop-portal.file-picker" = 1;

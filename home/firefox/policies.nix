@@ -1,18 +1,6 @@
 { inputs, lib, config, pkgs, ... }:
-let
-  lock-false = {
-    Value = false;
-    Status = "locked";
-  };
-  lock-true = {
-    Value = true;
-    Status = "locked";
-  };
-in {
-  programs.firefox.package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-    # ---- POLICIES ----
-    # Check about:policies#documentation for options.
-    extraPolicies = {
+{
+  programs.firefox.policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       EnableTrackingProtection = {
@@ -61,6 +49,5 @@ in {
       #   "browser.newtabpage.activity-stream.showSponsoredTopSites" =
       #     lock-false;
       # };
-    };
   };
 }

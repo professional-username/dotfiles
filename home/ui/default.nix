@@ -5,6 +5,8 @@ in {
   gtk.gtk3.extraConfig = gtk_config;
   gtk.gtk4.extraConfig = gtk_config;
 
+  stylix.targets.btop.enable=false;
+
   # Scaling environment variables
   home.sessionVariables = {
     GDK_SCALE = "1";

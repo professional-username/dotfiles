@@ -1,7 +1,7 @@
 { inputs, config, pkgs, lib, defaultWallpaper, ... }:
 
 let
-  sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
+  sddm-theme = inputs.silentSDDM.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
     theme = "catppuccin-mocha";
   };
 in {
@@ -13,7 +13,6 @@ in {
     # ];
 
   # Use wayland
-  services.xserver.displayManager.sddm.wayland.enable = true;
   services.xserver.displayManager.sessionCommands = ''
     ${pkgs.xorg.xrdb}/bin/xrdb -merge /etc/X11/XResources
     ${pkgs.nitrogen}/bin/nitrogen --restore &
