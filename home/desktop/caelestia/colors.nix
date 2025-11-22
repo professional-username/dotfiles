@@ -4,6 +4,8 @@
   #   inputs.caelestia-nix.homeManagerModules.default
   # ];
 
+  programs.caelestia-dots.caelestia.cli.settings.theme.enableTerm = false;
+
   # Override the color scheme with the stylix base16 theme
   programs.caelestia-dots.hypr.settings.scheme = {
     primary_paletteKeyColor = config.lib.stylix.colors.base08;
