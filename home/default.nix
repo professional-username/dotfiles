@@ -14,6 +14,7 @@
     ./emacs
     ./ui
     ./cad
+    ./comms
   ];
 
   home = {

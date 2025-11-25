@@ -74,6 +74,7 @@
       windowrule = [
         "hyprbars:bar_color rgb(${config.lib.stylix.colors.base0D}), match:focus 1"
         "hyprbars:bar_color rgb(${config.lib.stylix.colors.base03}), match:focus 0"
+        "workspace 20 silent, match:class ZapZap"
       ];
 
       # Set up Workspaces
@@ -90,6 +91,7 @@
         "quickshell"
         "systemctl --user start swww"
         "systemctl --user start set-wallpaper"
+        "zapzap"
       ];
       # Caelestia binds
 
