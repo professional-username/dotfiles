@@ -17,7 +17,6 @@
     jrnl
     zotero
     # spotify
-    aider-chat
     hyprshot
     feh
     neofetch

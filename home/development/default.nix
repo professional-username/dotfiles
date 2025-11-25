@@ -3,5 +3,6 @@
     ./devenv.nix
     ./git.nix
     ./languages.nix
+    ./aider.nix
   ];
 }
