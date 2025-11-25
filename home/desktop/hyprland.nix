@@ -76,6 +76,7 @@
         "hyprbars:bar_color rgb(${config.lib.stylix.colors.base03}), match:focus 0"
         "workspace 20 silent, match:class ZapZap"
         "workspace 20 silent, match:class vesktop"
+        "workspace 1 silent, match:class Spotify"
       ];
 
       # Set up Workspaces
@@ -94,6 +95,7 @@
         "systemctl --user start set-wallpaper"
         "zapzap"
         "vesktop"
+        "spotify"
       ];
       # Caelestia binds
 
