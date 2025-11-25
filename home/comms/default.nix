@@ -4,5 +4,5 @@
     zapzap
   ];
 
-  # TODO: Add vesktop
+  programs.vesktop.enable = true;
 }
