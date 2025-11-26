@@ -74,7 +74,7 @@
       windowrule = [
         "hyprbars:bar_color rgb(${config.lib.stylix.colors.base0D}), match:focus 1"
         "hyprbars:bar_color rgb(${config.lib.stylix.colors.base03}), match:focus 0"
-        "workspace 20 silent, match:class ZapZap"
+        "workspace 20 silent, match:class com.rtosta.zapzap"
         "workspace 20 silent, match:class vesktop"
         "workspace 1 silent, match:class Spotify"
       ];
