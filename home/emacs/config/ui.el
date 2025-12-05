@@ -33,6 +33,8 @@
   :config
   (treemacs-load-theme "nerd-icons"))
 
+(use-package markdown-preview-mode)
+
 
 (use-package treemacs
   :defer t

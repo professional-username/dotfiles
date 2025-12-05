@@ -97,5 +97,7 @@ in {
       # Eye candy
       rainbow-mode
       fira-code-mode
+      markdown-mode
+      markdown-preview-mode
     ];
 }
