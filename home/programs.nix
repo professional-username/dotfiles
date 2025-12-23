@@ -22,5 +22,7 @@
     neofetch
     # blender
     # bambu-studio
+    godot
+    aseprite
   ];
 }
