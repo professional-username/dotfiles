@@ -7,5 +7,6 @@
     ./stylix.nix
     ./settings.nix
     ./fonts.nix
+    ./virtualization.nix
   ];
 }

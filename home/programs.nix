@@ -24,5 +24,6 @@
     # bambu-studio
     godot
     aseprite
+    pixi
   ];
 }
