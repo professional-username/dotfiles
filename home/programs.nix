@@ -25,5 +25,10 @@
     godot
     aseprite
     pixi
+
+    codex
+    obs-studio
+    vlc
+    cookiecutter
   ];
 }
