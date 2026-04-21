@@ -30,5 +30,9 @@
     obs-studio
     vlc
     cookiecutter
+
+    unzip
+    zip
+    tokei
   ];
 }
