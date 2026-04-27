@@ -1,11 +1,11 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [ ];
 
-  programs.starship = {
+  programs.starship = lib.mkForce {
     enable = true;
     enableFishIntegration = true;
 
-    settings = {
+    settings = lib.mkForce {
       # Format settings
       add_newline = true;
       format = lib.concatStrings [

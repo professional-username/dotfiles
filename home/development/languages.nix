@@ -10,20 +10,20 @@
     metals # Scala
     jdt-language-server # Java
     lua-language-server # Lua
-    nodePackages.bash-language-server # Bash
-    nodePackages.yaml-language-server # Yaml
+    bash-language-server # Bash
+    yaml-language-server # Yaml
     sqls # SQL
     tailwindcss-language-server # Tailwind
-    nodePackages.typescript-language-server # TypeScript/JavaScript, includes JSX support
-    nodePackages.vscode-langservers-extracted # HTML/CSS/JSON
-    nodePackages.eslint # JavaScript linter
-    nodePackages.graphql-language-service-cli
-    # nodePackages.vls # Vite / Vite
+    typescript-language-server # TypeScript/JavaScript, includes JSX support
+    vscode-langservers-extracted # HTML/CSS/JSON
+    eslint # JavaScript linter
+    graphql-language-service-cli
+    # vls # Vite / Vite
     stylelint # CSS/SCSS linter
 
     # Code formatters
     black # Python formatter
-    nodePackages.prettier # Javascript / css / html etc
+    prettier # Javascript / css / html etc
     isort # Python import sorter
     stylua # Lua formatter
     nixpkgs-fmt # Nix formatter

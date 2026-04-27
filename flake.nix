@@ -41,8 +41,16 @@
     # caelestia-shell.url = "github:caelestia-dots/shell";
     # caelestia-shell.inputs.nixpkgs.follows = "nixpkgs";
 
-    caelestia-nix.url = "github:Markus328/caelestia-nix";
-    caelestia-nix.inputs.nixpkgs.follows = "nixpkgs";
+    caelestia-shell = {
+        url = "github:caelestia-dots/shell";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    caelestia-nix = {
+        url = "github:Markus328/caelestia-nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.caelestia-shell.follows = "caelestia-shell";
+    };
 
     # Spicetify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";

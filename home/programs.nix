@@ -19,7 +19,7 @@
     # spotify
     hyprshot
     feh
-    neofetch
+    fastfetch
     # blender
     # bambu-studio
     godot

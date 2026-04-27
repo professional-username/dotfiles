@@ -39,6 +39,8 @@
     enable = true;
     hypr.enable = false;
 
+    editor.vscode.enable = false;
+
     # Extra caelestia settings
     caelestia.shell.settings = {
       background.enabled = false;

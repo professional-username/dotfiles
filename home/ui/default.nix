@@ -1,9 +1,10 @@
 { inputs, lib, config, pkgs, ... }:
-let gtk_config = { gtk-xft-dpi = 230400; };
+let gtk_config = { gtk-xft-dpi = 230400;  };
 in {
   # GTK extra config
   gtk.gtk3.extraConfig = gtk_config;
   gtk.gtk4.extraConfig = gtk_config;
+  gtk.iconTheme.name =  "Adwaita";
 
   stylix.targets.btop.enable=false;
 
