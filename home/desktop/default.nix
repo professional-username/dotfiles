@@ -2,7 +2,7 @@
   imports = [
     # Manage Desktop-related configurations
     ./hyprland.nix
-    ./swww.nix
+    ./awww.nix
     ./caelestia
   ];
 

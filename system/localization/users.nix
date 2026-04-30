@@ -11,7 +11,7 @@
     packages = with pkgs;
       [
         # kate # It's a text editor?
-        swww
+        awww
         #  thunderbird
       ];
   };

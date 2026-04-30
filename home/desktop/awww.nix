@@ -13,20 +13,20 @@ let
       echo "Setting default wallpaper"
     fi
 
-    ${pkgs.swww}/bin/swww restore
-    ${pkgs.swww}/bin/swww img "$WALLPAPER" -t center
+    ${pkgs.awww}/bin/awww restore
+    ${pkgs.awww}/bin/awww img "$WALLPAPER" -t center
   '';
 in {
-  home.packages = [ pkgs.swww setWallpaperScript ];
+  home.packages = [ pkgs.awww setWallpaperScript ];
 
-  systemd.user.services.swww = {
+  systemd.user.services.awww = {
     Unit = {
       Description = "Wayland wallpaper daemon";
       PartOf = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${pkgs.swww}/bin/swww-daemon";
-      ExecStopPost = "${pkgs.swww}/bin/swww kill";
+      ExecStart = "${pkgs.awww}/bin/awww-daemon";
+      ExecStopPost = "${pkgs.awww}/bin/awww kill";
     };
     Install = { WantedBy = [ ]; };
   };
@@ -34,8 +34,8 @@ in {
   systemd.user.services.set-wallpaper = {
     Unit = {
       Description = "Set random wallpaper";
-      After = [ "swww.service" ];
-      Requires = [ "swww.service" ];
+      After = [ "awww.service" ];
+      Requires = [ "awww.service" ];
     };
     Service = {
       Type = "oneshot";

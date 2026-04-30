@@ -91,7 +91,7 @@
       "$GUI_EDITOR" = "emacs";
       exec-once = [
         "quickshell"
-        "systemctl --user start swww"
+        "systemctl --user start awww"
         "systemctl --user start set-wallpaper"
         "zapzap"
         "vesktop"
