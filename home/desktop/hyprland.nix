@@ -13,7 +13,7 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     plugins = [
       inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
-      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
+      # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
     ];
     enable = true;
 
@@ -38,13 +38,13 @@
         };
         # Window bars
         hyprbars = {
+          # bar_part_of_window = true;
+          # bar_precedent_over_border = true;
           bar_height = 38;
           on_double_click = "hyprctl dispatch fullscreen 1";
           bar_button_padding = 12;
           bar_padding = 10;
           bar_color = "rgb(${config.lib.stylix.colors.base01})";
-          # bar_part_of_window = true;
-          # bar_precedent_over_border = true;
           bar_title_enabled = false;
           hyprbars-button = [
             "rgb(${config.lib.stylix.colors.base08}), 23, 󰖭, hyprctl dispatch killactive, rgb(${config.lib.stylix.colors.base01})"
@@ -72,8 +72,8 @@
 
       # Window Rules
       windowrule = [
-        "hyprbars:bar_color rgb(${config.lib.stylix.colors.base0D}), match:focus 1"
-        "hyprbars:bar_color rgb(${config.lib.stylix.colors.base03}), match:focus 0"
+        # "hyprbars:bar_color rgb(${config.lib.stylix.colors.base0D}), match:focus 1"
+        # "hyprbars:bar_color rgb(${config.lib.stylix.colors.base03}), match:focus 0"
         "workspace 20 silent, match:class com.rtosta.zapzap"
         "workspace 20 silent, match:class vesktop"
         "workspace 1 silent, match:class Spotify"
@@ -168,6 +168,7 @@
         "$mod, tab, cyclenext"
         "$mod SHIFT, tab, cyclenext, cyclenext"
         "$mod, s, togglefloating"
+      # ];
         # Workspace rules
         "$mod, bracketright, split-cycleworkspacesnowrap, +1"
         "$mod, bracketleft, split-cycleworkspacesnowrap, -1"

@@ -82,6 +82,7 @@ in {
 
       # Additional language support
       nix-mode
+      rustic-mode
 
       # Org mode
       org

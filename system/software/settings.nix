@@ -3,6 +3,7 @@
 
   nix.settings.trusted-users = [ "root" "username" ];
 
+
   # Premissions for screen recording
   security.wrappers.gsr-kms-server = {
     source = "${pkgs.gpu-screen-recorder}/bin/gsr-kms-server";
@@ -11,5 +12,9 @@
     group = "root";
     permissions = "0755";
   };
+  users.users.username.extraGroups = [
+    "video"
+    "render"
+  ];
 
 }

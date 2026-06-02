@@ -30,6 +30,9 @@
     obs-studio
     vlc
     cookiecutter
+    pipes
+
+    jq
 
     unzip
     zip

@@ -7,15 +7,16 @@
   ];
 
   # Notification daemon
-  services.dunst = {
-    enable = true;
-    settings.global = {
-      offset = "30x30";
-      corner_radius = "12";
-      padding = "12";
-      horizontal_padding = "12";
-    };
-  };
+  # services.dunst = {
+  #   enable = true;
+  #   settings.global = {
+  #     offset = "30x30";
+  #     corner_radius = "12";
+  #     padding = "12";
+  #     horizontal_padding = "12";
+  #   };
+  # };
+
 
   # Launcher
   programs.tofi = {

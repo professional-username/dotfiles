@@ -8,6 +8,8 @@
   home.packages = with pkgs; [
     gpu-screen-recorder
     kdePackages.dolphin
+    swappy
+    quickshell
     # caelestia-cli
   ];
 
@@ -33,6 +35,13 @@
   #     # };
   #   };
   # };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [
+  #       pkgs.xdg-desktop-portal-hyprland
+  #       pkgs.xdg-desktop-portal-gtk
+  #   ];
+  # };
 
 
   programs.caelestia-dots = {
@@ -44,11 +53,16 @@
     # Extra caelestia settings
     caelestia.shell.settings = {
       background.enabled = false;
-      bar.status = {
-        showBattery = false;
-      };
-      general.apps.explorer = ["dolphin"]; # TODO: Doesn't work / open video file from widget
-      notifs.actionOnClick = true; #
+      # bar.status = {
+      #   showbattery = false;
+      # };
+      bar.status.showBattery = false;
+
+      # Prevent popout showing the active window on the left
+      bar.popouts.activeWindow = false; 
+
+      general.apps.explorer = ["dolphin"];
+      notifs.actionOnClick = true;
     };
   };
 
