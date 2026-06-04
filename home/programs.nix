@@ -37,5 +37,7 @@
     unzip
     zip
     tokei
+
+    plover
   ];
 }
