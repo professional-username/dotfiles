@@ -1,14 +1,18 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = [ ./sddm.nix ];
 
   # Enable hyprland
+
+
   programs.hyprland = {
     # Install the packages from nixpkgs
     enable = true;
     # Whether to enable XWayland
     xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    withUWSM = false;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).

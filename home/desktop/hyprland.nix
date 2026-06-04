@@ -37,21 +37,21 @@
           enable_persistent_workspaces = 1;
         };
         # Window bars
-        hyprbars = {
-          # bar_part_of_window = true;
-          # bar_precedent_over_border = true;
-          bar_height = 38;
-          on_double_click = "hyprctl dispatch fullscreen 1";
-          bar_button_padding = 12;
-          bar_padding = 10;
-          bar_color = "rgb(${config.lib.stylix.colors.base01})";
-          bar_title_enabled = false;
-          hyprbars-button = [
-            "rgb(${config.lib.stylix.colors.base08}), 23, 󰖭, hyprctl dispatch killactive, rgb(${config.lib.stylix.colors.base01})"
-            "rgb(${config.lib.stylix.colors.base0A}), 23, , hyprctl dispatch fullscreen 1, rgb(${config.lib.stylix.colors.base01})"
-            "rgb(${config.lib.stylix.colors.base0B}), 23, , hyprctl dispatch togglefloating, rgb(${config.lib.stylix.colors.base01})"
-          ];
-        };
+        # hyprbars = {
+        #   # bar_part_of_window = true;
+        #   # bar_precedent_over_border = true;
+        #   bar_height = 38;
+        #   on_double_click = "hyprctl dispatch fullscreen 1";
+        #   bar_button_padding = 12;
+        #   bar_padding = 10;
+        #   bar_color = "rgb(${config.lib.stylix.colors.base01})";
+        #   bar_title_enabled = false;
+        #   hyprbars-button = [
+        #     "rgb(${config.lib.stylix.colors.base08}), 23, 󰖭, hyprctl dispatch killactive, rgb(${config.lib.stylix.colors.base01})"
+        #     "rgb(${config.lib.stylix.colors.base0A}), 23, , hyprctl dispatch fullscreen 1, rgb(${config.lib.stylix.colors.base01})"
+        #     "rgb(${config.lib.stylix.colors.base0B}), 23, , hyprctl dispatch togglefloating, rgb(${config.lib.stylix.colors.base01})"
+        #   ];
+        # };
       };
 
       monitor =
@@ -170,8 +170,8 @@
         "$mod, s, togglefloating"
       # ];
         # Workspace rules
-        "$mod, bracketright, split-cycleworkspacesnowrap, +1"
-        "$mod, bracketleft, split-cycleworkspacesnowrap, -1"
+        "$mod, bracketright, split-workspace, +1"
+        "$mod, bracketleft, split-workspace, -1"
         "$mod, SPACE, togglespecialworkspace"
         "$mod SHIFT, SPACE, movetoworkspace, special"
 

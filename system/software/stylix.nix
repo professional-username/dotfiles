@@ -1,6 +1,7 @@
 { config, pkgs, defaultWallpaper, ... }:
 
 {
+
   stylix = {
     # Colours
     enable = true;
@@ -11,6 +12,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
 
     targets.grub.enable = false;
+    targets.kmscon.enable = false;
 
     # Fonts
     fonts = {
