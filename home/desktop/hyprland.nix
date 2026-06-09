@@ -54,8 +54,6 @@
         # };
       };
 
-      monitor =
-        [ "HDMI-A-3,2560x1330@60,0x0,1" "HDMI-A-2,2560x1330@60,2560x0,1" ];
       xwayland.force_zero_scaling = true;
       general = {
         # Borders etc
@@ -117,8 +115,8 @@
       # Mouse Binds
       bindm = [
         # Window
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
+        "$mod, mouse:272, move"
+        "$mod, mouse:273, size"
       ];
       # Keybinds
       binde = [

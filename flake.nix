@@ -61,32 +61,41 @@
     let
       inherit (self) outputs;
       defaultWallpaper = ./images/wallpaper_default.jpg;
-    in {
+      mkHost = hostName: nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs outputs defaultWallpaper hostName; };
+        modules = [
+          # System-level configuration
+          ./system/configuration.nix
+          ./hosts/${hostName}
+          # sddm-sugar-candy-nix.nixosModules.default
+
+          # Stylix
+          stylix.nixosModules.stylix
+
+          home-manager.nixosModules.home-manager
+          {
+            # Home manager modules
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs hostName; };
+            # User-specific configs
+            home-manager.users.username = {
+              imports = [
+                ./home
+                ./hosts/${hostName}/home.nix
+              ];
+            };
+          }
+        ];
+      };
+    in
+    {
       # NixOS configuration entrypoint
       nixosConfigurations = {
-        # Config for gpteapot system
-        apollo = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs defaultWallpaper; };
-          modules = [
-            # System-level configuration
-            ./system/configuration.nix
-            # sddm-sugar-candy-nix.nixosModules.default
-
-            # Stylix
-            stylix.nixosModules.stylix
-
-            home-manager.nixosModules.home-manager
-            {
-              # Home manager modules
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              # User-specific configs
-              home-manager.users.username = import ./home;
-            }
-          ];
-        };
-
+        # Desktop system
+        apollo = mkHost "apollo";
+        # Laptop system
+        redball = mkHost "redball";
       };
     };
 }
